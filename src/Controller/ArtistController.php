@@ -25,15 +25,15 @@ class ArtistController extends AbstractController
     }
     
     
-        /**
-     * @Route("/show/{id}", name="artist")
+    /**
+     * @Route("/artist/{id}", name="artist")
      */
-    public function show($id)
+    public function show(Artist $artist)
     {
         $titre = 'Fiche artiste';
         
-        $repository = $this->getDoctrine()->getRepository(Artist::class);
-        $artist = $repository->find($id);
+//        $repository = $this->getDoctrine()->getRepository(Artist::class);
+//        $artist = $repository->find($id);
         
         return $this->render('artist/show.html.twig', [
             'titre'=>$titre,

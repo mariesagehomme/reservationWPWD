@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ArtistController!{% endblock %}
+{% block title %}{{titre}}{% endblock %}
 
 {% block body %}
 <style>
@@ -10,12 +10,10 @@
 
 <div class="example-wrapper">
     <h1>{{ titre }}</h1>
-    <ul>
-        {% for artist in artists %}
-            <li>{{ artist.firstname }}</li>
-            <li>{{ artist.lastname }}</li>
+        <ul>
+        {% for role in roles %}
+            <li>{{ role.role }}</li>
         {% endfor %}   
     </ul>
-
 </div>
 {% endblock %}

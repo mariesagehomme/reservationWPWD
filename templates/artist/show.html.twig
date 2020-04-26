@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ArtistController!{% endblock %}
+{% block title %}{{titre}}{% endblock %}
 
 {% block body %}
 <style>
@@ -12,6 +12,7 @@
     <h1> {{ titre }}</h1>
     <ul>
             <li>{{ artist.firstname }}</li>
+            <li>{{ artist.lastname }}</li>
     </ul>
 
 </div>
