@@ -26,16 +26,13 @@ class LocalityController extends AbstractController
      /**
      * @Route("/locality/{id}", name="locality_show")
      */
-    public function show(Locality $locality)
+     public function show($id)
     {
-        $titre = 'Fiche localite';
-        
-//        $repository = $this->getDoctrine()->getRepository(Locality::class);
-//        $locality = $repository->find($id);
-        
+        $repository = $this->getDoctrine()->getRepository(Locality::class);
+        $locality = $repository->find($id);
+
         return $this->render('locality/show.html.twig', [
-            'titre'=>$titre,
-            'localite'=>$locality,
+            'locality' => $locality,
         ]);
     }
 }
