@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des lieux{% endblock %}
+
+{% block body %}
+    <h1>Liste des {{ resource }}</h1>
+
+    <ul>
+    {% for location in locations %}
+        <li>{{ location.designation }}
+            {% if location.website %}
+            - <a href="">{{ location.website }}</a>
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}

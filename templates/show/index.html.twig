@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des spectacles{% endblock %}
+
+{% block body %}
+    <h1>Liste des {{ resource }}</h1>
+
+    <ul>
+    {% for show in shows %}
+        <li>{{ show.title }}
+            {% if show.bookable %}
+            <span>{{ show.price }} €</span>
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
