@@ -17,11 +17,13 @@ class TypeFixtures extends Fixture
             ['type'=>'auteur'],
         ];
         
-        foreach ($types as $data) {
+        foreach ($types as $record) {
             $type = new Type();
-            $type->setType($data['type']);
+            $type->setType($record['type']);
             
             $manager->persist($type);
+            
+            $this->addReference($record['type'],$type);
         }
 
         $manager->flush();

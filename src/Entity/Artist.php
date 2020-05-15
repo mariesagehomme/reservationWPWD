@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -25,6 +27,16 @@ class Artist
      * @ORM\Column(type="string", length=60)
      */
     private $lastname;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Type", inversedBy="artists")
+     */
+    private $types;
+
+    public function __construct()
+    {
+        $this->types = new ArrayCollection();
+    }
     
     public function getId(): ?int
     {
@@ -52,6 +64,32 @@ class Artist
     public function setLastname(string $lastname): self
     {
         $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Type[]
+     */
+    public function getTypes(): Collection
+    {
+        return $this->types;
+    }
+
+    public function addType(Type $type): self
+    {
+        if (!$this->types->contains($type)) {
+            $this->types[] = $type;
+        }
+
+        return $this;
+    }
+
+    public function removeType(Type $type): self
+    {
+        if ($this->types->contains($type)) {
+            $this->types->removeElement($type);
+        }
 
         return $this;
     }
