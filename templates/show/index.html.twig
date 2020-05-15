@@ -11,6 +11,14 @@
             {% if show.bookable %}
             <span>{{ show.price }} €</span>
             {% endif %}
+            
+            {% if show.representations|length==1 %}
+            - <span>1 représentation</span>
+            {% elseif show.representations|length>1 %}
+            - <span>{{ show.representations|length }} représentations</span>
+            {% else %}
+            - <em>aucune représentation</em>
+            {% endif %}
         </li>
     {% endfor %}
     </ul>

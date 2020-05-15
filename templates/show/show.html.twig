@@ -16,11 +16,22 @@
         <p><strong>Lieu de création:</strong> {{ show.location.designation }}</p>
         {% endif %}
         
-       <p><strong>Prix:</strong> {{ show.price }} €</p>
-
+        <p><strong>Prix:</strong> {{ show.price }} €</p>
+        
         {% if show.bookable %}
         <p><em>Réservable</em></p>
         {% else %}
         <p><em>Non réservable</em></p>
+        {% endif %}
+        
+        <h2>Liste des représentations</h2>
+        {% if show.representations|length>=1 %}
+        <ul>
+            {% for representation in show.representations %}
+                <li>{{ representation.schedule|date('d/m/Y G:i:s') }}</li>              
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>Aucune représentation</p>
         {% endif %}
 {% endblock %}
