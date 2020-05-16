@@ -7,8 +7,8 @@
     
     <h2>Liste des types</h2>
     <ul>
-    {% for type in artist.types  %}
-        <li>{{ type.type }}</li>
+     {% for artistType in artist.artistTypes  %}
+        <li>{{ artistType.type}}</li>
     {% endfor %}
     </ul>
 {% endblock %}

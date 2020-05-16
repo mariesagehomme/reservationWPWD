@@ -62,11 +62,11 @@ class Type
     {
         return $this->artistTypes;
     }
-    
+   
     /**
-     * @return Collection|Artist[]
+     * @return Artist[]
      */
-    public function getArtists()
+    public function getArtists() 
     {
         $artists = [];
         foreach($this->artistTypes as $artistType) {

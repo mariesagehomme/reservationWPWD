@@ -6,9 +6,9 @@
     <h1>{{ type.type }}</h1>
     
     <h2>Liste des artistes</h2>
-    <ul>
-    {% for artist in type.artists %}
-        <li>{{ artist.firstname }} {{ artist.lastname }}</li>
+    <ul> 
+    {% for artistType in type.artists %}  {# for in => l'element droit est un tableau/collection, artists dans type#} 
+        <li>{{ artistType.firstname }} {{ artistType.lastname }}</li>
     {% endfor %}
     </ul>
 {% endblock %}
