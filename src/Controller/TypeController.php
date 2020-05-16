@@ -31,8 +31,8 @@ class TypeController extends AbstractController
         $titre = 'Fiche type';
         
         return $this->render('type/show.html.twig', [
-            'type'=>$type,
-            'titre'=>$titre,
+            'type' => $type,
+            'titre' => $titre,
         ]);
     }
 }

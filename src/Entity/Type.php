@@ -25,13 +25,13 @@ class Type
     private $type;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Artist", mappedBy="types")
+     * @ORM\OneToMany(targetEntity="App\Entity\ArtistType", mappedBy="type", orphanRemoval=true)
      */
-    private $artists;
+    private $artistTypes;
 
     public function __construct()
     {
-        $this->artists = new ArrayCollection();
+        $this->artistTypes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -50,30 +50,49 @@ class Type
 
         return $this;
     }
+   
+    public function __toString() {
+        return $this->type;
+    }
 
+    /**
+     * @return Collection|ArtistType[]
+     */
+    public function getArtistTypes(): Collection
+    {
+        return $this->artistTypes;
+    }
+    
     /**
      * @return Collection|Artist[]
      */
-    public function getArtists(): Collection
+    public function getArtists()
     {
-        return $this->artists;
+        $artists = [];
+        foreach($this->artistTypes as $artistType) {
+            $artists[] = $artistType->getArtist();
+        }
+        return $artists;
     }
 
-    public function addArtist(Artist $artist): self
+    public function addArtistType(ArtistType $artistType): self
     {
-        if (!$this->artists->contains($artist)) {
-            $this->artists[] = $artist;
-            $artist->addType($this);
+        if (!$this->artistTypes->contains($artistType)) {
+            $this->artistTypes[] = $artistType;
+            $artistType->setType($this);
         }
 
         return $this;
     }
 
-    public function removeArtist(Artist $artist): self
+    public function removeArtistType(ArtistType $artistType): self
     {
-        if ($this->artists->contains($artist)) {
-            $this->artists->removeElement($artist);
-            $artist->removeType($this);
+        if ($this->artistTypes->contains($artistType)) {
+            $this->artistTypes->removeElement($artistType);
+            // set the owning side to null (unless already changed)
+            if ($artistType->getType() === $this) {
+                $artistType->setType(null);
+            }
         }
 
         return $this;

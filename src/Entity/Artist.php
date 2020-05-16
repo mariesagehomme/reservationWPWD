@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ArtistRepository")
+ * @ORM\Table(name="artists")
  */
 class Artist
 {
@@ -29,15 +30,15 @@ class Artist
     private $lastname;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Type", inversedBy="artists")
+     * @ORM\OneToMany(targetEntity="App\Entity\ArtistType", mappedBy="artist", orphanRemoval=true)
      */
-    private $types;
+    private $artistTypes;
 
     public function __construct()
     {
-        $this->types = new ArrayCollection();
+        $this->artistTypes = new ArrayCollection();
     }
-    
+
     public function getId(): ?int
     {
         return $this->id;
@@ -54,7 +55,6 @@ class Artist
 
         return $this;
     }
-    
 
     public function getLastname(): ?string
     {
@@ -67,28 +67,37 @@ class Artist
 
         return $this;
     }
-
-    /**
-     * @return Collection|Type[]
-     */
-    public function getTypes(): Collection
-    {
-        return $this->types;
+    
+    public function __toString() {
+        return $this->firstname." ".$this->lastname;
     }
 
-    public function addType(Type $type): self
+    /**
+     * @return Collection|ArtistType[]
+     */
+    public function getArtistTypes(): Collection
     {
-        if (!$this->types->contains($type)) {
-            $this->types[] = $type;
+        return $this->artistTypes;
+    }
+
+    public function addArtistType(ArtistType $artistType): self
+    {
+        if (!$this->artistTypes->contains($artistType)) {
+            $this->artistTypes[] = $artistType;
+            $artistType->setArtist($this);
         }
 
         return $this;
     }
 
-    public function removeType(Type $type): self
+    public function removeArtistType(ArtistType $artistType): self
     {
-        if ($this->types->contains($type)) {
-            $this->types->removeElement($type);
+        if ($this->artistTypes->contains($artistType)) {
+            $this->artistTypes->removeElement($artistType);
+            // set the owning side to null (unless already changed)
+            if ($artistType->getArtist() === $this) {
+                $artistType->setArtist(null);
+            }
         }
 
         return $this;
