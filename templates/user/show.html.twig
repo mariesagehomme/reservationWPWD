@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fiche d'un utilisateur{% endblock %}
+
+{% block body %}
+    <h1>{{ user.firstname }} {{ user.lastname }}</h1>
+    <ul>
+     
+    <li>{{ user.login}}</li>
+    <li>{{ user.password}}</li>
+    <li>{{ user.role}}</li>
+    <li>{{ user.email}}</li>
+    <li>{{ user.langue}}</li>
+    </ul>
+{% endblock %}
