@@ -3,8 +3,9 @@
 {% block title %}Fiche d'un lieu{% endblock %}
 
 {% block body %}
-    <article>
+   <div class="col-4 ml-auto mr-auto mt-5 p-4" style="background-color: honeydew">
         <h1>{{ location.designation }}</h1>
+        <hr>
         <address>
             <p>{{ location.address }}</p>
             <p>{{ location.locality.postalCode }} 
@@ -27,7 +28,10 @@
         <h2>Liste des spectacles</h2>
         <ul>
         {% for show in location.shows %}
-            <li>{{ show.title }}</li>
+            <li style="list-style-type: none">{{ show.title }}</li>
         {% endfor %}
         </ul>
+        
+        <a href="{{ path('location_index') }}" class="btn btn-primary">back to list</a>
+   </div> 
 {% endblock %}

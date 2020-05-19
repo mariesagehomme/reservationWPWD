@@ -3,12 +3,18 @@
 {% block title %}Fiche d'un artiste{% endblock %}
 
 {% block body %}
-    <h1>{{ artist.firstname }} {{ artist.lastname }}</h1>
+    <div class="col-4 ml-auto mr-auto mt-5 p-4" style="background-color: honeydew">
+        <h1>{{ artist.firstname }} {{ artist.lastname }}</h1>
+        <hr>
+
+        <h3>Type</h3>
+        <ul style=" padding:0;">
+         {% for artistType in artist.artistTypes  %}
+            <li style="list-style-type: none;">{{ artistType.type}}</li>
+        {% endfor %}
+        </ul>
+        <a href="{{ path('artist_index') }}" class="btn btn-primary">back to list</a>
+    </div>
+        
     
-    <h2>Liste des types</h2>
-    <ul>
-     {% for artistType in artist.artistTypes  %}
-        <li>{{ artistType.type}}</li>
-    {% endfor %}
-    </ul>
 {% endblock %}

@@ -9,16 +9,16 @@ use App\Entity\Type;
 class TypeController extends AbstractController
 {
     /**
-     * @Route("/type", name="type")
+     * @Route("/type", name="type_index")
      */
     public function index()
     {  
         $repository = $this->getDoctrine()->getRepository(Type::class);
         $types = $repository->findAll();
-        $titre = 'Liste des types';
+        $titre = 'Types';
 
         return $this->render('type/index.html.twig', [
-            'titre'=>$titre,
+            'title'=>$titre,
             'types'=>$types,
         ]);
     }
@@ -28,11 +28,11 @@ class TypeController extends AbstractController
      */
     public function show(Type $type)
     {
-        $titre = 'Fiche type';
+        $titre = 'Type';
         
         return $this->render('type/show.html.twig', [
             'type' => $type,
-            'titre' => $titre,
+            'title' => $titre,
         ]);
     }
 }

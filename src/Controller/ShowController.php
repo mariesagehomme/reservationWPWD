@@ -9,7 +9,7 @@ use App\Entity\Show;
 class ShowController extends AbstractController
 {
     /**
-     * @Route("/show", name="show")
+     * @Route("/show", name="show_index")
      */
     public function index()
     {
@@ -18,7 +18,7 @@ class ShowController extends AbstractController
         
         return $this->render('show/index.html.twig', [
             'shows' => $shows,
-            'resource' => 'spectacles',
+            'resource' => 'Show',
         ]);
          }
     

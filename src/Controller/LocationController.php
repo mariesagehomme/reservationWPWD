@@ -9,7 +9,7 @@ use App\Entity\Location;
 class LocationController extends AbstractController
 {
     /**
-     * @Route("/location", name="location")
+     * @Route("/location", name="location_index")
      */
     public function index()
     {
@@ -18,7 +18,7 @@ class LocationController extends AbstractController
 
         return $this->render('location/index.html.twig', [
             'locations' => $locations,
-            'resource' => 'lieux',
+            'resource' => 'Locations',
         ]);
     }
     

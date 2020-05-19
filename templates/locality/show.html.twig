@@ -1,15 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Fiche d'une localité{% endblock %}
+{% block title %}locality{% endblock %}
 
 {% block body %}
+    <div class="col-4 ml-auto mr-auto mt-5 p-4" style="background-color: honeydew">
     <h1>{{ locality.postalCode }} {{ locality.locality }}</h1>
-    
-    <ul>
+    <hr>
+    <ul style=" padding:0;">
     {% for location in locality.locations %}
-        <li>{{ location.designation }}</li>
+        <li style="list-style-type: none;">{{ location.designation }}</li>
     {% endfor %}
     </ul>
-    <a href="{{ path('locality_index') }}">back to list</a>
-
+    <a href="{{ path('locality_index') }}" class="btn btn-primary">back to list</a>
+    </div>
 {% endblock %}

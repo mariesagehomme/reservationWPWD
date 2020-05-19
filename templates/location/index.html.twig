@@ -1,17 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste des lieux{% endblock %}
+{% block title %}Locations{% endblock %}
 
 {% block body %}
-    <h1>Liste des {{ resource }}</h1>
-
-    <ul>
+ <h1 class="text-center mt-4 mb-4">{{ resource }}</h1>
+   <table class="table text-center w-50 mr-auto ml-auto mt-4 mb-4">
+        <thead>
+            <tr style="background-color: lightblue; color:white;">
+                <th>DESIGNATION - WEBSITE</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
     {% for location in locations %}
-        <li>{{ location.designation }}
-            {% if location.website %}
-            - <a href="">{{ location.website }}</a>
-            {% endif %}
-        </li>
+        <tr>
+            <td>{{ location.designation }}
+                {% if location.website %}
+                - <a href="">{{ location.website }}</a>
+                {% endif %}
+            </td>
+            <td>
+                <a href="{{ path('location_show', {'id': location.id}) }}" class="btn btn-warning">Show</a>
+            </td>
+        </tr>
     {% endfor %}
-    </ul>
+    </tbody>
+</table>
 {% endblock %}

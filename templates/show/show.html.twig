@@ -3,11 +3,11 @@
 {% block title %}Fiche d'un spectacle{% endblock %}
 
 {% block body %}
-    <article>
+    <div class="col-4 ml-auto mr-auto mt-5 p-4" style="background-color: honeydew">
         <h1>{{ show.title }}</h1>
-
+        <hr>
         {% if show.posterUrl %}
-        <p><img src="{{ asset('images/' ~ show.posterUrl) }}" alt="{{ show.title }}" width="200"></p>
+        <p><img src="{{ asset('images/' ~ show.posterUrl) }}" alt="{{ show.title }}" width="100%"></p>
         {% else %}
         <canvas width="200" height="100" style="border:1px solid #000000;"></canvas>
         {% endif %}
@@ -34,4 +34,6 @@
         {% else %}
         <p>Aucune représentation</p>
         {% endif %}
+        <a href="{{ path('show_index')}}" class="btn btn-primary">Back to list</a>
+    </div>
 {% endblock %}

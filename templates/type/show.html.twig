@@ -3,12 +3,15 @@
 {% block title %}Fiche d'un type{% endblock %}
 
 {% block body %}
+    <div class="col-4 ml-auto mr-auto mt-5 p-4" style="background-color: honeydew">
     <h1>{{ type.type }}</h1>
-    
-    <h2>Liste des artistes</h2>
-    <ul> 
-    {% for artistType in type.artists %}  {# for in => l'element droit est un tableau/collection, artists dans type#} 
-        <li>{{ artistType.firstname }} {{ artistType.lastname }}</li>
-    {% endfor %}
-    </ul>
+    <hr>
+    <h3>Artist</h3>
+        <ul> 
+        {% for artistType in type.artists %}  {# for in => l'element droit est un tableau/collection, artists dans type#} 
+            <li style="list-style-type: none">{{ artistType.firstname }} {{ artistType.lastname }}</li>
+        {% endfor %}
+        </ul>
+        <a href="{{ path('type_index') }}" class="btn btn-primary">Back to list</a>
+    </div>
 {% endblock %}

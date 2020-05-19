@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Formulaire - Locality {% endblock %}
+{% block title %}Locality {% endblock %}
 
 {% block body %}
     <div class="text-center mb-4">
-    <h1>Form - {{ locality.locality }}</h1>
+    <h1>{{ locality.locality }}</h1>
      {{ form_start(form) }}
         {{ form_widget(form) }}
         <button class="btn btn-lg btn-primary">{{ button_label|default('Save') }}</button>

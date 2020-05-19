@@ -1,17 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Fiche d'un utilisateur{% endblock %}
+{% block title %}{{title}}{% endblock %}
 
 {% block body %}
-    <h1>{{ user.firstname }} {{ user.lastname }}</h1>
-    <ul>
-     
-    <li>{{ user.login}}</li>
-    <li>{{ user.password}}</li>
-    <li>{{ user.role}}</li>
-    <li>{{ user.email}}</li>
-    <li>{{ user.langue}}</li>
-    </ul>
-   <a href="{{ path('user_index') }}">back to list</a>
-   
+    <div class="col-5 ml-auto mr-auto mt-5 p-4" style="background-color: honeydew">
+
+        <h1>{{ user.firstname }} {{ user.lastname }}</h1>
+        <hr>
+        <ul style="padding: 0;"> 
+            <li>{{ user.login}}</li>
+            <li>{{ user.password}}</li>
+            <li>{{ user.role}}</li>
+            <li>{{ user.email}}</li>
+            <li>{{ user.langue}}</li>
+        </ul>
+        <a href="{{ path('user_edit', {'id':user.id}) }}" class="btn btn-primary">Edit</a>
+        <a href="{{ path('user_index') }}" class="btn btn-info">back to list</a>
+     </div>
 {% endblock %}

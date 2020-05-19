@@ -9,17 +9,17 @@ use App\Entity\Role;
 class RoleController extends AbstractController
 {
     /**
-     * @Route("/role", name="role")
+     * @Route("/role", name="role_index")
      */
     public function index()
     {
-        $titre = 'Liste des Roles';
+        $titre = 'Roles';
         
         $repository = $this->getDoctrine()->getRepository(Role::class);
         $roles = $repository->findAll();
         
         return $this->render('role/index.html.twig', [
-            'titre' => $titre,
+            'title' => $titre,
             'roles' => $roles,
         ]);
     }
@@ -27,15 +27,15 @@ class RoleController extends AbstractController
      /**
      * @Route("/role/{id}", name="role_show")
      */
-    public function show($role)
+    public function show(Role $role)
     {
-        $titre = 'Fiche role';
+        $titre = 'Role';
         
-        $repository = $this->getDoctrine()->getRepository(Role::class);
-        $role = $repository->find($id);
+        //$repository = $this->getDoctrine()->getRepository(Role::class);
+        //$role = $repository->find($id);
         
         return $this->render('role/show.html.twig', [
-            'titre'=>$titre,
+            'title'=>$titre,
             'role'=>$role,
         ]);
     }

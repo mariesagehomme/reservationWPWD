@@ -17,13 +17,13 @@ class UserController extends AbstractController
      */
     public function index()
     {
-        $titre = 'Liste des utilisateurs';
+        $titre = 'Users';
         
         $repository = $this->getDoctrine()->getRepository(User::class);
         $users = $repository->findAll();
         
         return $this->render('user/index.html.twig', [
-            'titre' => $titre,
+            'title' => $titre,
             'users' => $users,
         ]);    
     }
@@ -57,13 +57,13 @@ class UserController extends AbstractController
      */
     public function show(User $user)
     {
-        $titre = 'Fiche utilisateur';
+        $titre = 'Useur';
         
 //        $repository = $this->getDoctrine()->getRepository(User::class);
 //        $user = $repository->find($id);
         
         return $this->render('user/show.html.twig', [
-            'titre'=>$titre,
+            'title'=>$titre,
             'user'=>$user,
         ]);
     }

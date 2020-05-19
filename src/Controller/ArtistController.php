@@ -9,11 +9,11 @@ use App\Entity\Artist;
 class ArtistController extends AbstractController
 {
     /**
-     * @Route("/artist", name="artists")
+     * @Route("/artist", name="artist_index")
      */
     public function index()
     {
-        $titre = 'Liste des artistes';
+        $titre = 'Artists';
         
         $repository = $this->getDoctrine()->getRepository(Artist::class);
         $artists = $repository->findAll();
@@ -26,11 +26,11 @@ class ArtistController extends AbstractController
     
     
     /**
-     * @Route("/artist/{id}", name="artist")
+     * @Route("/artist/{id}", name="artist_show")
      */
     public function show(Artist $artist)
     {
-        $titre = 'Fiche artiste';
+        $titre = 'Artist';
         
 //        $repository = $this->getDoctrine()->getRepository(Artist::class);
 //        $artist = $repository->find($id);

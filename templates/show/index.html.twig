@@ -3,23 +3,36 @@
 {% block title %}Liste des spectacles{% endblock %}
 
 {% block body %}
-    <h1>Liste des {{ resource }}</h1>
-
-    <ul>
+    <h1 class="text-center mt-4 mb-4">{{ resource }}</h1>
+    <table class="table text-center w-50 mr-auto ml-auto mb-4">
+        <thead>
+            <tr style="background-color: lightblue; color:white;">
+                <th>ID</th>
+                <th>ROLE</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
     {% for show in shows %}
-        <li>{{ show.title }}
-            {% if show.bookable %}
-            <span>{{ show.price }} €</span>
-            {% endif %}
-            
-            {% if show.representations|length==1 %}
-            - <span>1 représentation</span>
-            {% elseif show.representations|length>1 %}
-            - <span>{{ show.representations|length }} représentations</span>
-            {% else %}
-            - <em>aucune représentation</em>
-            {% endif %}
-        </li>
+        <tr>
+            <td>{{ show.id }}</td>
+            <td>{{ show.title }}
+                {% if show.bookable %}
+                <span>{{ show.price }} €</span>
+                {% endif %}
+
+                {% if show.representations|length==1 %}
+                - <span>1 représentation</span>
+                {% elseif show.representations|length>1 %}
+                - <span>{{ show.representations|length }} représentations</span>
+                {% else %}
+                - <em>aucune représentation</em>
+                {% endif %}
+            </td>
+            <td>
+                <a href=" {{ path('show_show', {'id':show.id}) }}" class="btn btn-warning">Show</a>
+            </td>
+        </tr>
     {% endfor %}
     </ul>
 {% endblock %}
