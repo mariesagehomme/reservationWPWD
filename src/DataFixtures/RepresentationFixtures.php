@@ -27,11 +27,6 @@ class RepresentationFixtures extends Fixture implements DependentFixtureInterfac
                 'the_show'=>'ayiti',
                 'schedule'=>'2012-10-02 20:30',
             ],
-            [
-                'the_location'=>null,
-                'the_show'=>'ayiti',
-                'schedule'=>'2012-10-16 20:30',
-            ],
         ];
         
         foreach ($representations as $record) {           

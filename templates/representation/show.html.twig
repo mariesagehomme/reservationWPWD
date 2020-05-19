@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+    <div class="col-sm-6 col-md-5 ml-auto mr-auto mt-5 p-4" style="background-color: honeydew">
+    <h1>Représentation du {{ representation.schedule|date('d/m/Y') }} à {{ representation.schedule|date('G:i') }}</h1>
+        <p><strong>Spectacle:</strong> {{ representation.theShow.title }}</p>
+    <hr>
+    {% if representation.theLocation %}
+       <span>Location : {{ representation.theLocation.designation }}</span>
+    {% endif %}
+    <p><a href="{{ path('representation_index') }}" class="btn btn-primary">Back to list</a></p>
+    </div>    
+{% endblock %}
