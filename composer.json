@@ -23,6 +23,7 @@
         "symfony/orm-pack": "*",
         "symfony/polyfill-mbstring": "^1.17",
         "symfony/process": "5.0.*",
+        "symfony/security-csrf": "5.0.*",
         "symfony/serializer-pack": "*",
         "symfony/string": "5.0.*",
         "symfony/translation": "5.0.*",

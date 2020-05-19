@@ -3,10 +3,7 @@
 {% block title %}Formulaire{% endblock %}
 
 {% block body %}
-    <h1>User Form Edit </h1>
 
     {{ include('user/new.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('user_index') }}">back to list</a>
 
 {% endblock %}

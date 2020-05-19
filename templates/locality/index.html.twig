@@ -3,17 +3,30 @@
 {% block title %}{{titre}}{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-<h1>{{ titre }}</h1>
-    <ul>
+<h1 class="text-center mt-4 mb-4">{{ titre }}</h1>
+   <table class="table text-center w-50 mr-auto ml-auto mt-4 mb-4">
+        <thead>
+            <tr style="background-color: lightblue; color:white;">
+                <th>ID</th>
+                <th>POSTAL CODE</th>
+                <th>LOCALITY</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
         {% for locality in localites %}
-            <li>{{ locality.locality }}</li>
-        {% endfor %}   
-    </ul>
-</div>
+            <tr>
+                <td>{{ locality.id }}</td>
+                <td>{{ locality.postalCode }}</td>
+                <td>{{ locality.locality }}</td>
+                <td>
+                    <a href="{{ path('locality_show', {'id': locality.id}) }}" class="btn btn-primary">Show</a>
+                    <a href="{{ path('locality_edit', {'id': locality.id}) }}" class="btn btn-warning">Edit</a>
+                </td>                
+            </tr>
+
+        {% endfor %}  
+       <tbody>
+    </table>
 {% endblock %}
