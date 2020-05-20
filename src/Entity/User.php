@@ -6,10 +6,11 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -53,6 +54,24 @@ class User
      */
     private $langue;
 
+     public function getUsername()
+    {
+        return (string) $this->email;
+    }
+
+
+    public function getSalt()
+    {
+        // you *may* need a real salt depending on your encoder
+        // see section on salt below
+    }
+    
+        public function eraseCredentials()
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
+    }
+    
     public function getId(): ?int
     {
         return $this->id;
@@ -82,9 +101,9 @@ class User
         return $this;
     }
 
-    public function getRole(): ?string
+    public function getRoles()
     {
-        return $this->role;
+        return array('ROLE_USER');
     }
 
     public function setRole(?string $role): self
@@ -140,12 +159,5 @@ class User
         $this->langue = $langue;
 
         return $this;
-    }
-    
-    
-        public function eraseCredentials()
-    {
-        // If you store any temporary, sensitive data on the user, clear it here
-        // $this->plainPassword = null;
     }
 }
