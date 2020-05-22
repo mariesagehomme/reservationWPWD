@@ -24,31 +24,37 @@ class RepresentationFixtures extends Fixture implements DependentFixtureInterfac
             ],
             [
                 'the_location'=>null,
-                'the_show'=>'ayiti',
+                'the_show'=>'cible-mouvante',
                 'schedule'=>'2012-10-02 20:30',
             ],
+
         ];
         
-        foreach ($representations as $record) {           
-            $representation = new Representation();
-            
-            if($record['the_location']) {
-                $representation->setTheLocation($this->getReference($record['the_location']));
+    foreach ($representations as $record) {           
+                $representation = new Representation();
+
+                if($record['the_location']) {
+                    $representation->setTheLocation($this->getReference($record['the_location']));
+                }
+
+                $representation->setTheShow($this->getReference($record['the_show']));
+                $representation->setSchedule(new \DateTime($record['schedule']));
+
+                $this->addReference(
+                        $record['the_location'].'|'.
+                        $record['the_show'].'|'.
+                        $record['schedule'],$representation);
+
+                $manager->persist($representation);
             }
-            
-            $representation->setTheShow($this->getReference($record['the_show']));
-            $representation->setSchedule(new \DateTime($record['schedule']));
-                        
-            $manager->persist($representation);
+
+            $manager->flush();
         }
 
-        $manager->flush();
-    }
-
-    public function getDependencies() {
-        return [
-            LocationFixtures::class,
-            ShowFixtures::class,
-        ];
-    }
+        public function getDependencies() {
+            return [
+                LocationFixtures::class,
+                ShowFixtures::class,
+            ];
+        }
 }

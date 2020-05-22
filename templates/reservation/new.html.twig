@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reservation{% endblock %}
+
+{% block body %}
+    <div class="text-center mb-4">
+    <h1>Reservation</h1>
+     {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="btn btn-lg btn-primary">{{ button_label|default('Save') }}</button>
+     {{ form_end(form) }} 
+
+<a href="{{ path('reservation_index') }}">back to list</a>
+    </div>
+{% endblock %}

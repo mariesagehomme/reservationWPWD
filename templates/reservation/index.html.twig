@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reservation index{% endblock %}
+
+{% block body %}
+    <div class="col-4 ml-auto mr-auto mt-5 p-4" style="background-color: honeydew">
+    <h1>Reservation</h1>
+    <hr>
+    <ul>
+        {% for groups in reservations %}
+            <li style="list-style-type:none;">
+                <ul>{{ groups.0.user.firstname }} {{ groups.0.user.lastname }}
+                {% for reservation in groups %}
+                    <li  style="margin: 20px;">
+                        <span>{{ reservation.representation.theShow.title }}</span> ({{ reservation.places }} places)
+                        <a href="{{ path('reservation_edit', {'id': reservation.id}) }}" class="btn btn-info ml-3">edit</a>
+                        <a href="{{ path('reservation_show', {'id': reservation.id}) }}" class="btn btn-warning">show</a>
+                        
+                    </li>
+                {% endfor %}
+                </ul>
+            </li>
+        {% else %}
+            <li>no records found</li>
+        {% endfor %}
+        <a href="{{ path('reservation_new') }}" class="btn btn-primary">Create new</a>
+    </ul>
+    </div>
+    
+{% endblock %}
