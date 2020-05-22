@@ -1,0 +1,686 @@
+{
+  "response": {
+    "page": 1,
+    "pageCount": 78,
+    "resultCount": 1935,
+    "results": {
+      "event": [
+        {
+          "date_next": "2020-05-22",
+          "weekschema": {
+            "date_start": "2020-04-22",
+            "translations": {
+              "en": [
+                "monday, tuesday and sunday: closed",
+                "wednesday, thursday and friday: from 14:00 to 18:00",
+                "saturday: from 12:00 to 18:00"
+              ],
+              "fr": [
+                "lundi, mardi et dimanche: fermé",
+                "mercredi, jeudi et vendredi: de 14:00 à 18:00",
+                "samedi: de 12:00 à 18:00"
+              ],
+              "nl": [
+                "maandag, dinsdag en zondag: gesloten",
+                "woensdag, donderdag en vrijdag: van 14:00 tot 18:00",
+                "zaterdag: van 12:00 tot 18:00"
+              ]
+            },
+            "days": {
+              "sunday": {
+                "is_open": false
+              },
+              "saturday": {
+                "hours": {
+                  "start": "12:00:00",
+                  "end": "18:00:00"
+                },
+                "is_open": true
+              },
+              "tuesday": {
+                "is_open": false
+              },
+              "wednesday": {
+                "hours": {
+                  "start": "14:00:00",
+                  "end": "18:00:00"
+                },
+                "is_open": true
+              },
+              "thursday": {
+                "hours": {
+                  "start": "14:00:00",
+                  "end": "18:00:00"
+                },
+                "is_open": true
+              },
+              "friday": {
+                "hours": {
+                  "start": "14:00:00",
+                  "end": "18:00:00"
+                },
+                "is_open": true
+              },
+              "monday": {
+                "is_open": false
+              }
+            },
+            "date_end": "2020-05-23"
+          },
+          "facebook_link": null,
+          "accept_article27": false,
+          "targets": {
+            "translations": null
+          },
+          "is_closed_on_school_holidays": false,
+          "translations": {
+            "de": {
+              "website": null,
+              "shortdescr": null,
+              "performers": null,
+              "phone_contact": null,
+              "agenda_url": "https://agenda.brussels/de/detail/id/492639.html",
+              "boxoffice_url": null,
+              "longdescr": null,
+              "name": "Thilo Heinzmann",
+              "phone_booking": null,
+              "email": null
+            },
+            "pt": {
+              "website": null,
+              "shortdescr": null,
+              "performers": null,
+              "phone_contact": null,
+              "agenda_url": "https://agenda.brussels/pt/detail/id/492639.html",
+              "boxoffice_url": null,
+              "longdescr": null,
+              "name": "Thilo Heinzmann",
+              "phone_booking": null,
+              "email": null
+            },
+            "en": {
+              "website": null,
+              "shortdescr": null,
+              "performers": null,
+              "phone_contact": null,
+              "agenda_url": "https://agenda.brussels/en/detail/id/492639.html",
+              "boxoffice_url": null,
+              "longdescr": null,
+              "name": "Thilo Heinzmann",
+              "phone_booking": null,
+              "email": null
+            },
+            "it": {
+              "website": null,
+              "shortdescr": null,
+              "performers": null,
+              "phone_contact": null,
+              "agenda_url": "https://agenda.brussels/it/detail/id/492639.html",
+              "boxoffice_url": null,
+              "longdescr": null,
+              "name": "Thilo Heinzmann",
+              "phone_booking": null,
+              "email": null
+            },
+            "cn": {
+              "website": null,
+              "shortdescr": null,
+              "performers": null,
+              "phone_contact": null,
+              "agenda_url": "https://agenda.brussels/cn/detail/id/492639.html",
+              "boxoffice_url": null,
+              "longdescr": null,
+              "name": "Thilo Heinzmann",
+              "phone_booking": null,
+              "email": null
+            },
+            "fr": {
+              "website": "http://www.dependance.be",
+              "shortdescr": null,
+              "performers": null,
+              "phone_contact": null,
+              "agenda_url": "https://agenda.brussels/fr/detail/id/492639.html",
+              "boxoffice_url": null,
+              "longdescr": null,
+              "name": "Thilo Heinzmann",
+              "phone_booking": null,
+              "email": "info@dependance.be"
+            },
+            "sp": {
+              "website": null,
+              "shortdescr": null,
+              "performers": null,
+              "phone_contact": null,
+              "agenda_url": "https://agenda.brussels/sp/detail/id/492639.html",
+              "boxoffice_url": null,
+              "longdescr": null,
+              "name": "Thilo Heinzmann",
+              "phone_booking": null,
+              "email": null
+            },
+            "nl": {
+              "website": null,
+              "shortdescr": null,
+              "performers": null,
+              "phone_contact": null,
+              "agenda_url": "https://agenda.brussels/nl/detail/id/492639.html",
+              "boxoffice_url": null,
+              "longdescr": null,
+              "name": "Thilo Heinzmann",
+              "phone_booking": null,
+              "email": null
+            }
+          },
+          "is_by_appointment": false,
+          "import_origin": null,
+          "id": 492639,
+          "is_online": false,
+          "categories": {
+            "main": {
+              "translations": {
+                "en": "Exhibition",
+                "fr": "Exposition",
+                "nl": "Tentoonstellingen"
+              },
+              "id": 23
+            },
+            "others": {
+              "translations": {
+                "en": [
+                  "Art Galleries",
+                  "Multidisciplinary"
+                ],
+                "fr": [
+                  "Galeries d'art",
+                  "Pluridisciplinaire"
+                ],
+                "nl": [
+                  "Galeries",
+                  "Pluridisciplinair"
+                ]
+              },
+              "list": [
+                24,
+                34
+              ]
+            }
+          },
+          "place": {
+            "neca": "gallery",
+            "districts": {
+              "translations": {
+                "fr": "Dansaert/Sainte-Catherine",
+                "nl": "Dansaert/Sint-Katelijne"
+              },
+              "list": 3
+            },
+            "external_id": null,
+            "facebook_id": null,
+            "is_in_address_book": true,
+            "translations": {
+              "de": {
+                "address_street_number": 4,
+                "website": "http://www.dependance.be",
+                "address_street_name": "Rue du Marché aux Porcs",
+                "booking_url": null,
+                "address_street_box": null,
+                "phone_booking": null,
+                "address_city": "Bruxelles",
+                "description_print": null,
+                "phone_contact": "+32 2 217 74 00",
+                "address_line2": "1000 Bruxelles",
+                "address_line1": "Rue du Marché aux Porcs, 4",
+                "name": "dépendance",
+                "description_web": null,
+                "address_zip": 1000,
+                "sort_order": null,
+                "email": "info@dependance.be"
+              },
+              "pt": {
+                "address_street_number": 4,
+                "website": "http://www.dependance.be",
+                "address_street_name": "Rue du Marché aux Porcs",
+                "booking_url": null,
+                "address_street_box": null,
+                "phone_booking": null,
+                "address_city": "Bruxelles",
+                "description_print": null,
+                "phone_contact": "+32 2 217 74 00",
+                "address_line2": "1000 Bruxelles",
+                "address_line1": "Rue du Marché aux Porcs, 4",
+                "name": "dépendance",
+                "description_web": null,
+                "address_zip": 1000,
+                "sort_order": null,
+                "email": "info@dependance.be"
+              },
+              "en": {
+                "address_street_number": 4,
+                "website": "http://www.dependance.be",
+                "address_street_name": "Rue du Marché aux Porcs",
+                "booking_url": null,
+                "address_street_box": null,
+                "phone_booking": null,
+                "address_city": "Brussels",
+                "description_print": null,
+                "phone_contact": "+32 2 217 74 00",
+                "address_line2": "1000 Brussels",
+                "address_line1": "Rue du Marché aux Porcs, 4",
+                "name": "dépendance",
+                "description_web": "The Brussels-based gallery dépendance was founded in 2003 by Michael Callies and Stephan Jaax. The gallery’s artist programme includes the work of contemporary artists who take a social and political stance and operate both inside and outside the established art circuit. dépendance  was among the first galleries to open a space in downtown Brussels, which later became the most significant area for young art in the Belgian capital, with both commercial and non-profit spaces. ",
+                "address_zip": 1000,
+                "sort_order": "DÉPENDANCE",
+                "email": "info@dependance.be"
+              },
+              "it": {
+                "address_street_number": 4,
+                "website": "http://www.dependance.be",
+                "address_street_name": "Rue du Marché aux Porcs",
+                "booking_url": null,
+                "address_street_box": null,
+                "phone_booking": null,
+                "address_city": "Bruxelles",
+                "description_print": null,
+                "phone_contact": "+32 2 217 74 00",
+                "address_line2": "1000 Bruxelles",
+                "address_line1": "Rue du Marché aux Porcs, 4",
+                "name": "dépendance",
+                "description_web": null,
+                "address_zip": 1000,
+                "sort_order": null,
+                "email": "info@dependance.be"
+              },
+              "cn": {
+                "address_street_number": 4,
+                "website": "http://www.dependance.be",
+                "address_street_name": "Rue du Marché aux Porcs",
+                "booking_url": null,
+                "address_street_box": null,
+                "phone_booking": null,
+                "address_city": "Bruxelles",
+                "description_print": null,
+                "phone_contact": "+32 2 217 74 00",
+                "address_line2": "1000 Bruxelles",
+                "address_line1": "Rue du Marché aux Porcs, 4",
+                "name": "dépendance",
+                "description_web": null,
+                "address_zip": 1000,
+                "sort_order": null,
+                "email": "info@dependance.be"
+              },
+              "fr": {
+                "address_street_number": 4,
+                "website": "http://www.dependance.be",
+                "address_street_name": "Rue du Marché aux Porcs",
+                "booking_url": null,
+                "address_street_box": null,
+                "phone_booking": null,
+                "address_city": "Bruxelles",
+                "description_print": null,
+                "phone_contact": "+32 2 217 74 00",
+                "address_line2": "1000 Bruxelles",
+                "address_line1": "Rue du Marché aux Porcs, 4",
+                "name": "dépendance",
+                "description_web": "La galerie dépendance a été fondée en 2003 à Bruxelles par Michael Callies et Stephan Jaax. Depuis ses débuts, elle représente et propose des artistes dont les travaux sont aussi spécifiques, individuels et diversifiés que les artistes eux-mêmes.",
+                "address_zip": 1000,
+                "sort_order": "DÉPENDANCE",
+                "email": "info@dependance.be"
+              },
+              "sp": {
+                "address_street_number": 4,
+                "website": "http://www.dependance.be",
+                "address_street_name": "Rue du Marché aux Porcs",
+                "booking_url": null,
+                "address_street_box": null,
+                "phone_booking": null,
+                "address_city": "Bruxelles",
+                "description_print": null,
+                "phone_contact": "+32 2 217 74 00",
+                "address_line2": "1000 Bruxelles",
+                "address_line1": "Rue du Marché aux Porcs, 4",
+                "name": "dépendance",
+                "description_web": null,
+                "address_zip": 1000,
+                "sort_order": null,
+                "email": "info@dependance.be"
+              },
+              "nl": {
+                "address_street_number": 4,
+                "website": "http://www.dependance.be",
+                "address_street_name": "Varkensmarkt",
+                "booking_url": null,
+                "address_street_box": null,
+                "phone_booking": null,
+                "address_city": "Brussel",
+                "description_print": null,
+                "phone_contact": "+32 2 217 74 00",
+                "address_line2": "1000 Brussel",
+                "address_line1": "Varkensmarkt, 4",
+                "name": "dépendance",
+                "description_web": "Sinds de oprichting van Dependance in 2003 heeft de galerie werk gebracht van kunstenaars die sociale en politieke posities innemen en dat veruitwendigen met een eigenzinnige esthetische taal. De gebruikte media - schilderkunst, beeldhouwkunst, fotografie, video of installatie - zijn zo individueel en gediversifieerd als de kunstenaars zelf.",
+                "address_zip": 1000,
+                "sort_order": "DÉPENDANCE",
+                "email": "info@dependance.be"
+              }
+            },
+            "last_updated_at": "2020-05-22T01:35:52+02:00",
+            "location": {
+              "lon": 4.34546778,
+              "lat": 50.85310629
+            },
+            "import_origin": null,
+            "id": 239824,
+            "is_in_vb_export": true,
+            "region": "brussels",
+            "published_at": "2013-10-19T01:15:18+02:00",
+            "backoffice_id": 2521
+          },
+          "accept_cultuurbon": false,
+          "published_at": "2020-01-30T15:06:39+01:00",
+          "languages": null,
+          "date_end": "2020-05-23",
+          "dates": [
+            {
+              "doors": null,
+              "start": "14:00:00",
+              "end": "18:00:00",
+              "day": "2020-04-22"
+            },
+            {
+              "doors": null,
+              "start": "14:00:00",
+              "end": "18:00:00",
+              "day": "2020-04-23"
+            },
+            {
+              "doors": null,
+              "start": "14:00:00",
+              "end": "18:00:00",
+              "day": "2020-04-24"
+            },
+            {
+              "doors": null,
+              "start": "12:00:00",
+              "end": "18:00:00",
+              "day": "2020-04-25"
+            },
+            {
+              "doors": null,
+              "start": "14:00:00",
+              "end": "18:00:00",
+              "day": "2020-04-29"
+            },
+            {
+              "doors": null,
+              "start": "14:00:00",
+              "end": "18:00:00",
+              "day": "2020-04-30"
+            },
+            {
+              "doors": null,
+              "start": "14:00:00",
+              "end": "18:00:00",
+              "day": "2020-05-01"
+            },
+            {
+              "doors": null,
+              "start": "12:00:00",
+              "end": "18:00:00",
+              "day": "2020-05-02"
+            },
+            {
+              "doors": null,
+              "start": "14:00:00",
+              "end": "18:00:00",
+              "day": "2020-05-06"
+            },
+            {
+              "doors": null,
+              "start": "14:00:00",
+              "end": "18:00:00",
+              "day": "2020-05-07"
+            },
+            {
+              "doors": null,
+              "start": "14:00:00",
+              "end": "18:00:00",
+              "day": "2020-05-08"
+            },
+            {
+              "doors": null,
+              "start": "12:00:00",
+              "end": "18:00:00",
+              "day": "2020-05-09"
+            },
+            {
+              "doors": null,
+              "start": "14:00:00",
+              "end": "18:00:00",
+              "day": "2020-05-13"
+            },
+            {
+              "doors": null,
+              "start": "14:00:00",
+              "end": "18:00:00",
+              "day": "2020-05-14"
+            },
+            {
+              "doors": null,
+              "start": "14:00:00",
+              "end": "18:00:00",
+              "day": "2020-05-15"
+            },
+            {
+              "doors": null,
+              "start": "12:00:00",
+              "end": "18:00:00",
+              "day": "2020-05-16"
+            },
+            {
+              "doors": null,
+              "start": "14:00:00",
+              "end": "18:00:00",
+              "day": "2020-05-20"
+            },
+            {
+              "doors": null,
+              "start": "14:00:00",
+              "end": "18:00:00",
+              "day": "2020-05-21"
+            },
+            {
+              "doors": null,
+              "start": "14:00:00",
+              "end": "18:00:00",
+              "day": "2020-05-22"
+            },
+            {
+              "doors": null,
+              "start": "12:00:00",
+              "end": "18:00:00",
+              "day": "2020-05-23"
+            }
+          ],
+          "is_permanent": false,
+          "opening": {
+            "start": "18:00:00",
+            "end": "20:00:00",
+            "day": "2020-04-22",
+            "timestamp": "2020-04-22T18:00:00+02:00"
+          },
+          "is_closed_on_public_holidays": false,
+          "date_start": "2020-04-22",
+          "show_in_agenda": true,
+          "organizer": {
+            "neca": "gallery",
+            "external_id": null,
+            "facebook_id": null,
+            "is_in_address_book": true,
+            "translations": {
+              "de": {
+                "address_street_number": 4,
+                "website": "http://www.dependance.be",
+                "address_street_name": "Rue du Marché aux Porcs",
+                "booking_url": null,
+                "address_street_box": null,
+                "phone_booking": null,
+                "address_city": "Bruxelles",
+                "description_print": null,
+                "phone_contact": "+32 2 217 74 00",
+                "address_line2": "1000 Bruxelles",
+                "address_line1": "Rue du Marché aux Porcs, 4",
+                "name": "dépendance",
+                "description_web": null,
+                "address_zip": 1000,
+                "sort_order": null,
+                "email": "info@dependance.be"
+              },
+              "pt": {
+                "address_street_number": 4,
+                "website": "http://www.dependance.be",
+                "address_street_name": "Rue du Marché aux Porcs",
+                "booking_url": null,
+                "address_street_box": null,
+                "phone_booking": null,
+                "address_city": "Bruxelles",
+                "description_print": null,
+                "phone_contact": "+32 2 217 74 00",
+                "address_line2": "1000 Bruxelles",
+                "address_line1": "Rue du Marché aux Porcs, 4",
+                "name": "dépendance",
+                "description_web": null,
+                "address_zip": 1000,
+                "sort_order": null,
+                "email": "info@dependance.be"
+              },
+              "en": {
+                "address_street_number": 4,
+                "website": "http://www.dependance.be",
+                "address_street_name": "Rue du Marché aux Porcs",
+                "booking_url": null,
+                "address_street_box": null,
+                "phone_booking": null,
+                "address_city": "Brussels",
+                "description_print": null,
+                "phone_contact": "+32 2 217 74 00",
+                "address_line2": "1000 Brussels",
+                "address_line1": "Rue du Marché aux Porcs, 4",
+                "name": "dépendance",
+                "description_web": "The Brussels-based gallery dépendance was founded in 2003 by Michael Callies and Stephan Jaax. The gallery’s artist programme includes the work of contemporary artists who take a social and political stance and operate both inside and outside the established art circuit. dépendance  was among the first galleries to open a space in downtown Brussels, which later became the most significant area for young art in the Belgian capital, with both commercial and non-profit spaces. ",
+                "address_zip": 1000,
+                "sort_order": "DÉPENDANCE",
+                "email": "info@dependance.be"
+              },
+              "it": {
+                "address_street_number": 4,
+                "website": "http://www.dependance.be",
+                "address_street_name": "Rue du Marché aux Porcs",
+                "booking_url": null,
+                "address_street_box": null,
+                "phone_booking": null,
+                "address_city": "Bruxelles",
+                "description_print": null,
+                "phone_contact": "+32 2 217 74 00",
+                "address_line2": "1000 Bruxelles",
+                "address_line1": "Rue du Marché aux Porcs, 4",
+                "name": "dépendance",
+                "description_web": null,
+                "address_zip": 1000,
+                "sort_order": null,
+                "email": "info@dependance.be"
+              },
+              "cn": {
+                "address_street_number": 4,
+                "website": "http://www.dependance.be",
+                "address_street_name": "Rue du Marché aux Porcs",
+                "booking_url": null,
+                "address_street_box": null,
+                "phone_booking": null,
+                "address_city": "Bruxelles",
+                "description_print": null,
+                "phone_contact": "+32 2 217 74 00",
+                "address_line2": "1000 Bruxelles",
+                "address_line1": "Rue du Marché aux Porcs, 4",
+                "name": "dépendance",
+                "description_web": null,
+                "address_zip": 1000,
+                "sort_order": null,
+                "email": "info@dependance.be"
+              },
+              "fr": {
+                "address_street_number": 4,
+                "website": "http://www.dependance.be",
+                "address_street_name": "Rue du Marché aux Porcs",
+                "booking_url": null,
+                "address_street_box": null,
+                "phone_booking": null,
+                "address_city": "Bruxelles",
+                "description_print": null,
+                "phone_contact": "+32 2 217 74 00",
+                "address_line2": "1000 Bruxelles",
+                "address_line1": "Rue du Marché aux Porcs, 4",
+                "name": "dépendance",
+                "description_web": "La galerie dépendance a été fondée en 2003 à Bruxelles par Michael Callies et Stephan Jaax. Depuis ses débuts, elle représente et propose des artistes dont les travaux sont aussi spécifiques, individuels et diversifiés que les artistes eux-mêmes.",
+                "address_zip": 1000,
+                "sort_order": "DÉPENDANCE",
+                "email": "info@dependance.be"
+              },
+              "sp": {
+                "address_street_number": 4,
+                "website": "http://www.dependance.be",
+                "address_street_name": "Rue du Marché aux Porcs",
+                "booking_url": null,
+                "address_street_box": null,
+                "phone_booking": null,
+                "address_city": "Bruxelles",
+                "description_print": null,
+                "phone_contact": "+32 2 217 74 00",
+                "address_line2": "1000 Bruxelles",
+                "address_line1": "Rue du Marché aux Porcs, 4",
+                "name": "dépendance",
+                "description_web": null,
+                "address_zip": 1000,
+                "sort_order": null,
+                "email": "info@dependance.be"
+              },
+              "nl": {
+                "address_street_number": 4,
+                "website": "http://www.dependance.be",
+                "address_street_name": "Varkensmarkt",
+                "booking_url": null,
+                "address_street_box": null,
+                "phone_booking": null,
+                "address_city": "Brussel",
+                "description_print": null,
+                "phone_contact": "+32 2 217 74 00",
+                "address_line2": "1000 Brussel",
+                "address_line1": "Varkensmarkt, 4",
+                "name": "dépendance",
+                "description_web": "Sinds de oprichting van Dependance in 2003 heeft de galerie werk gebracht van kunstenaars die sociale en politieke posities innemen en dat veruitwendigen met een eigenzinnige esthetische taal. De gebruikte media - schilderkunst, beeldhouwkunst, fotografie, video of installatie - zijn zo individueel en gediversifieerd als de kunstenaars zelf.",
+                "address_zip": 1000,
+                "sort_order": "DÉPENDANCE",
+                "email": "info@dependance.be"
+              }
+            },
+            "last_updated_at": "2020-05-22T01:35:52+02:00",
+            "location": {
+              "lon": 4.34546778,
+              "lat": 50.85310629
+            },
+            "import_origin": null,
+            "id": 239824,
+            "is_in_vb_export": true,
+            "region": "brussels",
+            "published_at": "2013-10-19T01:15:18+02:00",
+            "backoffice_id": 2521
+          },
+          "last_updated_at": "2020-05-22T01:35:52+02:00",
+          "is_free": false,
+          "ranking": 0.39685026299205,
+          "backoffice_id": 212639,
+          "accept_paspartoe": false
+        }
+      ]
+    }
+  }
+}
