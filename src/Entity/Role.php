@@ -21,6 +21,7 @@ class Role
      * @ORM\Column(type="string", length=30)
      */
     private $role;
+ 
 
     public function getId(): ?int
     {
@@ -37,5 +38,9 @@ class Role
         $this->role = $role;
 
         return $this;
+    }
+    
+    public function __toString() {
+        return 'ROLE_USER';
     }
 }

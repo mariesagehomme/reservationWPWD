@@ -11,10 +11,15 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
+
 class ReservationController extends AbstractController
 {
     /**
      * @Route("/reservation", name="reservation_index", methods={"GET"})
+     * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')")
      */
     public function index(ReservationRepository $reservationRepository): Response
     {
@@ -32,6 +37,7 @@ class ReservationController extends AbstractController
 
     /**
      * @Route("/reservation/new", name="reservation_new", methods={"GET","POST"})
+     * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')")
      */
     public function new(Request $request): Response
     {
@@ -55,6 +61,7 @@ class ReservationController extends AbstractController
 
     /**
      * @Route("/reservation/{id}", name="reservation_show", methods={"GET"}, requirements={"id"="\d+"})
+     * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')")
      */
     public function show(Reservation $reservation): Response
     {
@@ -65,6 +72,7 @@ class ReservationController extends AbstractController
 
     /**
      * @Route("/reservation/{id}/edit", name="reservation_edit", methods={"GET","POST"})
+     * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')")
      */
     public function edit(Request $request, Reservation $reservation): Response
     {
@@ -85,6 +93,7 @@ class ReservationController extends AbstractController
 
     /**
      * @Route("/{id}", name="reservation_delete", methods={"DELETE"})
+     * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')")
      */
     public function delete(Request $request, Reservation $reservation): Response
     {

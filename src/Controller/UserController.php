@@ -9,11 +9,16 @@ use App\Form\UserType;
 use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
+//https://symfony.com/doc/4.2/best_practices/security.html
 
 class UserController extends AbstractController
 {
     /**
      * @Route("/user", name="user_index")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function index()
     {
@@ -30,6 +35,7 @@ class UserController extends AbstractController
     
     /**
      * @Route("/user/new", name="user_new", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN")
      */
      public function new(Request $request): Response
     {
@@ -54,6 +60,7 @@ class UserController extends AbstractController
     
     /**
      * @Route("/user/{id}", name="user_show", methods={"GET"}, requirements={"id"="\d+"})
+     *@IsGranted("ROLE_ADMIN")
      */
     public function show(User $user)
     {
@@ -90,6 +97,7 @@ class UserController extends AbstractController
     
     /**
      * @Route("/user/{id}", name="user_delete", methods={"DELETE"})
+     * @IsGranted("ROLE_ADMIN")
      */
 
      public function delete(Request $request, User $user): Response

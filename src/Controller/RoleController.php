@@ -6,10 +6,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Role;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
 class RoleController extends AbstractController
 {
     /**
      * @Route("/role", name="role_index")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function index()
     {
@@ -26,6 +30,7 @@ class RoleController extends AbstractController
     
      /**
      * @Route("/role/{id}", name="role_show")
+      * @IsGranted("ROLE_ADMIN")
      */
     public function show(Role $role)
     {

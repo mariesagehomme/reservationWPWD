@@ -3,13 +3,16 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Type;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class TypeController extends AbstractController
 {
     /**
      * @Route("/type", name="type_index")
+     * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')") //https://symfony.com/doc/4.2/best_practices/security.html
      */
     public function index()
     {  
@@ -25,6 +28,7 @@ class TypeController extends AbstractController
     
         /**
      * @Route("/type/{id}", name="type_show")
+     * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')")
      */
     public function show(Type $type)
     {

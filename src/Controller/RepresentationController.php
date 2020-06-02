@@ -6,10 +6,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Representation;
 
+
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
 class RepresentationController extends AbstractController
 {
     /**
      * @Route("/representation", name="representation_index")
+     * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')")
      */
     public function index()
     {
@@ -25,6 +30,7 @@ class RepresentationController extends AbstractController
     
     /**
      * @Route("/representation/{id}", name="representation_show")
+     * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')")
      */
     public function show(Representation $representation)
     {

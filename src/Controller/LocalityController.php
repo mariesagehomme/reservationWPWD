@@ -9,10 +9,14 @@ use App\Form\LocalityType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
 class LocalityController extends AbstractController
 {
     /**
      * @Route("/locality", name="locality_index")
+     * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')")
      */
     public function index()
     {
@@ -28,6 +32,7 @@ class LocalityController extends AbstractController
 
      /**
      * @Route("/locality/{id}", name="locality_show", requirements={"id"="\d+"})
+      * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')")
      */
      public function show($id)
     {

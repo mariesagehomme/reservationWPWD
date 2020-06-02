@@ -5,11 +5,14 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Location;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class LocationController extends AbstractController
 {
     /**
      * @Route("/location", name="location_index")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function index()
     {
@@ -24,6 +27,7 @@ class LocationController extends AbstractController
     
     /**
      * @Route("/location/{id}", name="location_show")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function show($id)
     {

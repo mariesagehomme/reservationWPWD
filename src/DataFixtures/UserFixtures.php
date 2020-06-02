@@ -14,7 +14,6 @@ class UserFixtures extends Fixture
             [
                 'login'=>'bob',
                 'password'=>'epfc',
-                'role'=>'admin',
                 'firstname'=>'Bob',
                 'lastname'=>'Sull',
                 'email'=>'bob@sull.com',
@@ -23,7 +22,6 @@ class UserFixtures extends Fixture
             [
                 'login'=>'fred',
                 'password'=>'epfc',
-                'role'=>'member',
                 'firstname'=>'Fred',
                 'lastname'=>'Astair',
                 'email'=>'fred@sull.com',
@@ -32,7 +30,6 @@ class UserFixtures extends Fixture
             [
                 'login'=>'judith',
                 'password'=>'epfc',
-                'role'=>'member',
                 'firstname'=>'Judith',
                 'lastname'=>'Larson',
                 'email'=>'jud@lars.com',
@@ -47,7 +44,6 @@ class UserFixtures extends Fixture
            */ 
             $user->setLogin($record['login']);
             $user->setPassword($record['password']);
-            $user->setRole($record['role']);
             $user->setFirstname($record['firstname']);
             $user->setLastname($record['lastname']);
             $user->setEmail($record['email']);

@@ -9,18 +9,20 @@ use App\Entity\Role;
 class RoleFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
-        {
+    {
         $roles = [
-            ['role'=>'admin'],
-            ['role'=>'member'],
-            ['role'=>'affiliate'],
+            ['role'=>'ROLE_ADMIN'],
+            ['role'=>'ROLE_MEMBER'],
+            ['role'=>'ROLE_AFFILIATE'],
         ];
         
-        foreach ($roles as $data) {
-            $roles = new Role();
-            $roles->setRole($data['role']);
+        foreach($roles as $data) {
+            $role = new Role();
+            $role->setRole($data['role']);
             
-            $manager->persist($roles);
+            $this->addReference($data['role'],$role);
+            
+            $manager->persist($role);
         }
 
         $manager->flush();

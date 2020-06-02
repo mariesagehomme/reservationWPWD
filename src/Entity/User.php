@@ -2,13 +2,17 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+
+
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @ORM\Table(name="user")
  */
 class User implements UserInterface
 {
@@ -32,11 +36,6 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", length=60)
      */
-    private $role;
-
-    /**
-     * @ORM\Column(type="string", length=60)
-     */
     private $firstname;
 
     /**
@@ -50,38 +49,26 @@ class User implements UserInterface
     private $email;
 
     /**
-     * @ORM\Column(type="string", length=60)
+     * @ORM\Column(type="string", length=2)
      */
     private $langue;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Role")
+     */
+    private $role;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Reservation", mappedBy="user", orphanRemoval=true)
      */
     private $reservations;
-
+    
     public function __construct()
     {
+        $this->roles = new ArrayCollection();
         $this->reservations = new ArrayCollection();
     }
 
-     public function getUsername()
-    {
-        return (string) $this->email;
-    }
-
-
-    public function getSalt()
-    {
-        // you *may* need a real salt depending on your encoder
-        // see section on salt below
-    }
-    
-        public function eraseCredentials()
-    {
-        // If you store any temporary, sensitive data on the user, clear it here
-        // $this->plainPassword = null;
-    }
-    
     public function getId(): ?int
     {
         return $this->id;
@@ -99,9 +86,12 @@ class User implements UserInterface
         return $this;
     }
 
+    /**
+     * @see UserInterface
+     */
     public function getPassword(): ?string
     {
-        return $this->password;
+        return (string) $this->password;
     }
 
     public function setPassword(string $password): self
@@ -111,26 +101,9 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getRoles()
-    {
-        return array('ROLE_USER');
-    }
-
-    public function setRole(?string $role): self
-    {
-        $this->role = $role;
-
-        return $this;
-    }
-
     public function getFirstname(): ?string
     {
         return $this->firstname;
-    }
-    
-        public function getRole(): ?string
-    {
-        return $this->role;
     }
 
     public function setFirstname(string $firstname): self
@@ -175,11 +148,39 @@ class User implements UserInterface
 
         return $this;
     }
-    
-    public function __toString()
-{
-    return (string) $this->getFirstname();
-}
+
+    /**
+     * @return String[] Array of role as String (e.g. 'ROLE_ADMIN')
+     * @see UserInterface
+     */
+    public function getRoles(): array
+    {
+        foreach($this->role as $role) {
+            $roles[] = $role->getRole();
+        }
+
+        $roles[] = 'ROLE_USER';
+        
+        return array_unique($roles);
+    }
+
+    public function addRole(Role $role): self
+    {
+        if (!$this->role->contains($role)) {
+            $this->role[] = $role;
+        }
+
+        return $this;
+    }
+
+    public function removeRole(Role $role): self
+    {
+        if ($this->role->contains($role)) {
+            $this->role->removeElement($role);
+        }
+
+        return $this;
+    }
 
     /**
      * @return Collection|Reservation[]
@@ -211,4 +212,32 @@ class User implements UserInterface
 
         return $this;
     }
+    
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUsername(): string
+    {
+        return (string) $this->email;
+    }
+    
+    /**
+     * @see UserInterface
+     */
+    public function getSalt()
+    {
+        // not needed when using the "bcrypt" algorithm in security.yaml
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials()
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
+    }
+    
 }
