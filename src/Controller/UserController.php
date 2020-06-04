@@ -12,13 +12,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
-//https://symfony.com/doc/4.2/best_practices/security.html
 
 class UserController extends AbstractController
 {
     /**
      * @Route("/user", name="user_index")
-     * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("ROLE_ADMIN") 
      */
     public function index()
     {

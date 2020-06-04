@@ -13,7 +13,7 @@ class RoleController extends AbstractController
 {
     /**
      * @Route("/role", name="role_index")
-     * @IsGranted("ROLE_ADMIN")
+     * @Security("is_granted('ROLE_ADMIN')")
      */
     public function index()
     {
@@ -30,7 +30,7 @@ class RoleController extends AbstractController
     
      /**
      * @Route("/role/{id}", name="role_show")
-      * @IsGranted("ROLE_ADMIN")
+      * @Security("is_granted('ROLE_ADMIN')")
      */
     public function show(Role $role)
     {

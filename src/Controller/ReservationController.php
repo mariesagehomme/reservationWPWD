@@ -61,7 +61,6 @@ class ReservationController extends AbstractController
 
     /**
      * @Route("/reservation/{id}", name="reservation_show", methods={"GET"}, requirements={"id"="\d+"})
-     * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')")
      */
     public function show(Reservation $reservation): Response
     {
@@ -105,4 +104,25 @@ class ReservationController extends AbstractController
 
         return $this->redirectToRoute('reservation_index');
     }
+        
+    /**
+     * @Route("/reservation/{id}/pay", name="reservation_pay")
+     * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')")
+     */
+    public function pay(Request $request, Reservation $reservation): Response  {
+
+       //var_dump($request->request); die;
+      
+        \Stripe\Stripe::setApiKey('sk_test_a84m1hrSViHaGM7UJTkJR0ok00iz91QCPu');
+        \Stripe\PaymentIntent::create([
+          'amount' => 2000,
+          'currency' => 'eur',
+          'payment_method_types' => ['card'],
+        ]);
+
+       return $this->render('reservation/pay.html.twig', [
+            'reservation' => $reservation
+        ]);
+    }
+    
 }
