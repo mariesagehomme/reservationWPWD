@@ -1,0 +1,61 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 5, 2020, 9:40:15 AM
+    Author     : Marie Sagehomme
+*/
+
+body {
+    background-image: url('../images/login.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+label {
+    margin-top: 1em;
+}
+
+
+/*login form and signin form*/
+.form-login, .form-signin{
+    max-width: 400px;
+    margin: 100px auto;
+    background-color: #f8f9fa;
+    padding: 35px;
+    border-radius: 20px;
+}
+
+.btn-login-form {
+    margin-top: 20px;
+}
+
+.btn-form-logout {
+    color: red;
+}
+
+#user div {
+    display: flex;
+    flex-direction: column;
+}
+
+/*table design*/
+tr, .info-sheet {
+    background-color: #f8f9fa;
+}
+
+.form-payment {
+    background-color: #fff;
+    padding: 35px;
+}
+
+.container-payment{
+    display: flex;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: auto;
+}
+

@@ -3,13 +3,13 @@
 {% block title %}Formulaire{% endblock %}
 
 {% block body %}
-    <div class="text-center mb-4 form-signin">
-    <h1>New User</h1>
-     {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <button class="btn btn-lg btn-primary">{{ button_label|default('Save') }}</button>
-     {{ form_end(form) }} 
+    <div class="form-signin">
+        <h1>New User</h1>
+         {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button class="btn btn-primary mt-4">{{ button_label|default('Save') }}</button>
+         {{ form_end(form) }} 
 
-<a href="{{ path('user_index') }}">back to list</a>
+         <a href="{{ path('user_index') }}" class="btn btn-info mt-4">back to list</a>
     </div>
 {% endblock %}
