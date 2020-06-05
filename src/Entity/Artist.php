@@ -34,6 +34,12 @@ class Artist
      */
     private $artistTypes;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Agent", inversedBy="artists")
+     */
+    private $agent;
+    
+
     public function __construct()
     {
         $this->artistTypes = new ArrayCollection();
@@ -99,6 +105,18 @@ class Artist
                 $artistType->setArtist(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getAgent(): ?Agent
+    {
+        return $this->agent;
+    }
+
+    public function setAgent(?Agent $agent): self
+    {
+        $this->agent = $agent;
 
         return $this;
     }

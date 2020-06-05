@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Manager{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    <h1 class="text-center">Manager</h1>
+
+   <table class="table text-center w-50 mr-auto ml-auto mt-4 mb-4">
+        <thead>
+            <tr>
+                <th>MANAGER</th>
+                <th>EMAIL</th>
+                <th>ARTIST</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for agent in agents  %}
+            <tr>
+                <td>{{ agent.name }}</td>
+                <td>{{ agent.email }}</td>
+                {% for artist in agent.artists %}
+                    <td>{{ artist.firstname }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}   
+        </tbody>
+    </table>
+</div>
+{% endblock %}
