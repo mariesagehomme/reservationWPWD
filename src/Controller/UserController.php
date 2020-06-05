@@ -34,7 +34,6 @@ class UserController extends AbstractController
     
     /**
      * @Route("/user/new", name="user_new", methods={"GET","POST"})
-     * @IsGranted("ROLE_ADMIN")
      */
      public function new(Request $request): Response
     {

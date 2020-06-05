@@ -39,6 +39,18 @@ class ArtistType
      * @ORM\ManyToMany(targetEntity="App\Entity\Show", mappedBy="artistType")
      */
     private $shows;
+    
+    
+/**
+ * Transform to string
+ * 
+ * @return string
+ */
+    public function __toString()
+{
+    return (string) $this->id;
+}
+
 
     public function __construct()
     {

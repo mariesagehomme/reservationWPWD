@@ -148,7 +148,7 @@ class User implements UserInterface
 
         return $this;
     }
-
+    
     /**
      * @return String[] Array of role as String (e.g. 'ROLE_ADMIN')
      * @see UserInterface

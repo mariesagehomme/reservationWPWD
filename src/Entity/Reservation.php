@@ -33,7 +33,18 @@ class Reservation
      * @ORM\Column(type="smallint")
      */
     private $places;
-
+    
+/**
+     * Transform to string
+     * 
+     * @return string
+    * I add this function toString for my Easy Admin Bundle
+     */
+        public function __toString()
+    {
+        return (string) $this->id;
+    }
+    
     public function getId(): ?int
     {
         return $this->id;

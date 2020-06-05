@@ -63,6 +63,18 @@ class Location
      * @ORM\OneToMany(targetEntity="App\Entity\Representation", mappedBy="the_location")
      */
     private $representations;
+    
+    
+/**
+ * Transform to string
+ * 
+ * @return string
+ * I add this function toString for my Easy Admin Bundle
+ */
+    public function __toString()
+{
+    return (string) $this->id;
+}
 
     public function __construct()
     {

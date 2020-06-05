@@ -19,7 +19,18 @@ label {
     margin-top: 1em;
 }
 
+h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 4em;
+    margin: 100px 0 50px 0;
+ 
+}
 
+.dataTables_wrapper {
+    max-width: 1200px;
+    margin: auto;
+}
 /*login form and signin form*/
 .form-login, .form-signin{
     max-width: 400px;

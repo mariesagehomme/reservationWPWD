@@ -43,6 +43,17 @@ class Representation
      * @ORM\OneToMany(targetEntity="App\Entity\Reservation", mappedBy="representation", orphanRemoval=true)
      */
     private $reservations;
+    
+    /**
+     * Transform to string
+     * 
+     * @return string
+    * I add this function toString for my Easy Admin Bundle
+     */
+        public function __toString()
+    {
+        return (string) $this->id;
+    }
 
     public function __construct()
     {

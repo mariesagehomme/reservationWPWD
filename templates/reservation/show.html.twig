@@ -12,19 +12,16 @@
         <th>SHOW</th>
         <th>DATE & TIME</th>
         <th>PLACE</th>
-        <th>ACTIONS</th>
             <tr>
                 <td>{{ reservation.id }}</td>
                 <td>{{ reservation.representation.theShow.title }}</td>
                 <td>{{ reservation.representation.schedule|date('d/m/Y') }} - {{ reservation.representation.schedule|date('H:i') }}</td>
                 <td>{{ reservation.places }}</td>
-                <td>
-                    <a href="{{ path('reservation_edit', {'id':reservation.id}) }}" class="btn btn-info">EDIT</a>
-                </td>
             </tr>
         </tbody>
     </table>
 
+    <a href="{{ path('reservation_pay', {'id': reservation.id}) }}" class="btn btn-danger">pay</a>
     <a href="{{ path('reservation_index') }}" class="btn btn-primary">back to list</a>
 
 </div>

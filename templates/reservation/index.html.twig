@@ -13,9 +13,8 @@
                 {% for reservation in groups %}
                     <li  style="margin: 20px;">
                         <span>{{ reservation.representation.theShow.title }}</span> ({{ reservation.places }} places)
-                        <a href="{{ path('reservation_edit', {'id': reservation.id}) }}" class="btn btn-info ml-3">edit</a>
                         <a href="{{ path('reservation_show', {'id': reservation.id}) }}" class="btn btn-warning">show</a>
-                        <a href="{{ path('reservation_pay', {'id': reservation.id}) }}" class="btn btn-danger">add</a>
+                        <a href="{{ path('reservation_pay', {'id': reservation.id}) }}" class="btn btn-danger">pay</a>
                         
                     </li>
                 {% endfor %}
@@ -24,7 +23,6 @@
         {% else %}
             <li>no records found</li>
         {% endfor %}
-        <a href="{{ path('reservation_new') }}" class="btn btn-primary">Create new</a>
     </ul>
     </div>
     

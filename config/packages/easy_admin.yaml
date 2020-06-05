@@ -1,0 +1,9 @@
+easy_admin:
+    entities:
+        - App\Entity\Artist
+        - App\Entity\Locality
+        - App\Entity\Location
+        - App\Entity\Reservation
+        - App\Entity\Role
+        - App\Entity\Type
+        - App\Entity\Show
