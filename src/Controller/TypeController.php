@@ -12,7 +12,7 @@ class TypeController extends AbstractController
 {
     /**
      * @Route("/type", name="type_index")
-     * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')") //https://symfony.com/doc/4.2/best_practices/security.html
+     * @IsGranted("ROLE_MEMBER") //https://symfony.com/doc/4.2/best_practices/security.html
      */
     public function index()
     {  
@@ -28,7 +28,7 @@ class TypeController extends AbstractController
     
         /**
      * @Route("/type/{id}", name="type_show")
-     * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')")
+     * @IsGranted("ROLE_MEMBER")
      */
     public function show(Type $type)
     {

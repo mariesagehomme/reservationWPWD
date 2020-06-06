@@ -3,9 +3,8 @@
 {% block title %}Reservation index{% endblock %}
 
 {% block body %}
+    <h1 class="text-center">Reservation</h1>
     <div class="col-4 ml-auto mr-auto mt-5 p-4 info-sheet">
-    <h1>Reservation</h1>
-    <hr>
     <ul>
         {% for groups in reservations %}
             <li style="list-style-type:none;">
@@ -13,7 +12,7 @@
                 {% for reservation in groups %}
                     <li  style="margin: 20px;">
                         <span>{{ reservation.representation.theShow.title }}</span> ({{ reservation.places }} places)
-                        <a href="{{ path('reservation_show', {'id': reservation.id}) }}" class="btn btn-warning">show</a>
+                        <a href="{{ path('reservation_show', {'id': reservation.id}) }}" class="btn btn-info">show</a>
                         <a href="{{ path('reservation_pay', {'id': reservation.id}) }}" class="btn btn-danger">pay</a>
                         
                     </li>

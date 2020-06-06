@@ -4,7 +4,7 @@
 
 {% block body %}
     <div class="col-4 ml-auto mr-auto mt-5 p-4 info-sheet">
-        <h1>{{ show.title }}</h1>
+        <h2>{{ show.title }}</h2>
         <hr>
         {% if show.posterUrl %}
         <p><img src="{{ asset('images/' ~ show.posterUrl) }}" alt="{{ show.title }}" width="100%"></p>

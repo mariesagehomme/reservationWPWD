@@ -14,7 +14,7 @@ class RepresentationController extends AbstractController
 {
     /**
      * @Route("/representation", name="representation_index")
-     * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')")
+     * @IsGranted("ROLE_MEMBER")
      */
     public function index()
     {
@@ -30,7 +30,7 @@ class RepresentationController extends AbstractController
     
     /**
      * @Route("/representation/{id}", name="representation_show")
-     * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')")
+     * @IsGranted("ROLE_MEMBER")
      */
     public function show(Representation $representation)
     {

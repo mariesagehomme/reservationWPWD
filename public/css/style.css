@@ -8,12 +8,24 @@ and open the template in the editor.
     Author     : Marie Sagehomme
 */
 
+
+/*GENERAL DESIGN*/
 body {
     background-image: url('../images/login.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
 }
+
+ul {
+    padding: 0;
+}
+li {
+    list-style-type: none;
+}
+
 
 label {
     margin-top: 1em;
@@ -27,10 +39,13 @@ h1 {
  
 }
 
+/*DATABLE DESIGN*/
+
 .dataTables_wrapper {
     max-width: 1200px;
     margin: auto;
 }
+
 /*login form and signin form*/
 .form-login, .form-signin{
     max-width: 400px;
@@ -53,7 +68,7 @@ h1 {
     flex-direction: column;
 }
 
-/*table design*/
+/*DESIGN TEMPLATE*/
 tr, .info-sheet {
     background-color: #f8f9fa;
 }
@@ -69,4 +84,41 @@ tr, .info-sheet {
     max-width: 1200px;
     margin: auto;
 }
+
+
+/*MAIN NAV*/
+#main-nav{
+    margin:0;
+    padding:0;
+    list-style-type:none;
+    text-align:center;
+ }
+ 
+#main-nav li {
+    list-style-type: none;
+ }
+#main-nav li a {
+    display:block;
+    width:100%;
+    text-decoration:none;
+    padding:5px;
+    margin: 5px;
+    color: white;
+ }
+ 
+ #main-nav ul li ul {
+    display:none;
+ }
+ 
+ #main-nav ul li:hover ul {
+    display:block;
+ }
+#main-nav li:hover ul li {
+    float:none;
+ }
+ 
+ #main-nav li ul {
+    position:absolute;
+    z-index: 3;
+ }
 

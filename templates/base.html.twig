@@ -12,23 +12,83 @@
         <script src="https://js.stripe.com/v3/"></script>
         
     </head>
-    <style>
-        body{
-            font-family: 'Raleway', sans-serif;
-            font-weight: 200;
-        }
-    </style>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
         <h5>Project Symfony - marie Sagehomme</h5>
-        <div>
+        <div id="main-nav">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active ml-3">
-              <a class="nav-link btn btn-info" style="color: seashell;" href="{{ path('app_login') }}">log in<span class="sr-only">(current)</span></a>
+             {% if app.user %}
+             <li class="nav-item active ml-3">
+                <a class="nav-link btn btn-info" style="color: seashell;" href="{{ path('app_login') }}">{{app.user.firstname }}<span class="sr-only">(current)</span></a>
+             </li>
+             <li class="nav-item ml-3">
+               <a class="nav-link btn btn-danger" href="{{ path('app_logout') }}" style="color: seashell;">Logout</a>
+             </li> 
+             {% else %}
+                 <li>
+                    <a class="nav-link btn btn-info" style="color: seashell;" href="{{ path('app_login') }}">log in<span class="sr-only"></span></a> 
+                 </li>
+                 <li class="nav-item ml-3">
+                    <a class="nav-link btn btn-success" href="{{ path('user_new') }}" style="color: seashell;">Sign up</a>
+                </li> 
+              {% endif %} 
+              {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+              <li class="nav-item ml-3">
+                  <a class="btn btn-dark">all pages</a>
+              <ul>
+                  {% if is_granted('ROLE_ADMIN') %}
+                  <li>
+                      <a class="nav-link btn btn-dark" href="{{ path('user_index') }}">User</a>
+                  </li>
+                  {% endif %}
+                  {% if is_granted('ROLE_MEMBER') %}
+                  <li>
+                      <a class="nav-link btn btn-dark" href="{{ path('type_index') }}">Type</a>
+                  </li>
+                  {% endif %}
+                  {% if is_granted('ROLE_MEMBER') %}
+                  <li>
+                      <a class="nav-link btn btn-dark" href="{{ path('show_index') }}">Show</a>
+                  </li>
+                  {% endif %}
+                  {% if is_granted('ROLE_MEMBER') %}
+                  <li>
+                      <a class="nav-link btn btn-dark" href="{{ path('role_index') }}">Role</a>
+                  </li>
+                  {% endif %}
+                  {% if is_granted('ROLE_MEMBER') %}
+                  <li>
+                      <a class="nav-link btn btn-dark" href="{{ path('reservation_index') }}">Reservation</a>
+                  </li>
+                  {% endif %}
+                  {% if is_granted('ROLE_MEMBER') %}
+                  <li>
+                      <a class="nav-link btn btn-dark" href="{{ path('representation_index') }}">Representation</a>
+                  </li>
+                  {% endif %}
+                  {% if is_granted('ROLE_MEMBER') %}
+                  <li>
+                      <a class="nav-link btn btn-dark" href="{{ path('location_index') }}">Location</a>
+                  </li> 
+                  {% endif %}
+                  {% if is_granted('ROLE_MEMBER') %}
+                  <li>
+                      <a class="nav-link btn btn-dark" href="{{ path('locality_index') }}">Locality</a>
+                  </li>  
+                  {% endif %}
+                  {% if is_granted('ROLE_MEMBER') %}
+                  <li>
+                      <a class="nav-link btn btn-dark" href="{{ path('artist_index') }}">Artist</a>
+                  </li> 
+                  {% endif %}
+                  {% if is_granted('ROLE_MEMBER') %}
+                  <li>
+                      <a class="nav-link btn btn-dark" href="{{ path('agent_index') }}">Agent</a>
+                  </li>  
+                  {% endif %}
+              </ul>
             </li>
-            <li class="nav-item ml-3">
-              <a class="nav-link btn btn-success" href="{{ path('user_new') }}" style="color: seashell;">sign up</a>
-            </li>
+            {% endif %}
           </ul>
         </div>
       </nav>

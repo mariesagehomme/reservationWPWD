@@ -16,7 +16,7 @@ class LocalityController extends AbstractController
 {
     /**
      * @Route("/locality", name="locality_index")
-     * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')")
+     * @IsGranted("ROLE_MEMBER")
      */
     public function index()
     {
@@ -32,7 +32,7 @@ class LocalityController extends AbstractController
 
      /**
      * @Route("/locality/{id}", name="locality_show", requirements={"id"="\d+"})
-      * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')")
+     *@IsGranted("ROLE_MEMBER")
      */
      public function show($id)
     {
@@ -46,6 +46,7 @@ class LocalityController extends AbstractController
     
      /**
      * @Route("/locality/{id}/edit", name="locality_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_AFFILIATE")
      */
      public function edit(Request $request, Locality $locality): Response
     {

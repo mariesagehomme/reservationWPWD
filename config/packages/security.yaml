@@ -23,6 +23,10 @@ security:
                 path: app_logout
                 target: app_login
                 # where to redirect after logout
+    role_hierarchy:
+        ROLE_ADMIN: [ROLE_ADMIN, ROLE_MEMBER, ROLE_AFFILIATE]   
+        ROLE_AFFILIATE: [ROLE_AFFILIATE, ROLE_MEMBER]
+        ROLE_MEMBER: [ROLE_MEMBER]
                 
 
             # activate different ways to authenticate

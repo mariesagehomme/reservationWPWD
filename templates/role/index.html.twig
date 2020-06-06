@@ -9,7 +9,6 @@
             <tr style="background-color: lightblue; color:white;">
                 <th>ID</th>
                 <th>ROLE</th>
-                <th>ACTION</th>
             </tr>
         </thead>
         <tbody>
@@ -17,10 +16,6 @@
          <tr> 
             <td>{{ role.id }}</td>
             <td>{{ role.role }}</td>
-            <td>
-                <a href="{{ path('role_show', {'id':role.id}) }}" class="btn btn-warning">Show</a>
-            
-            </td>
          </tr>   
         {% endfor %}   
         </tbody>

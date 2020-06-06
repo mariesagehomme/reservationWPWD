@@ -13,7 +13,7 @@ class ArtistController extends AbstractController
 {
     /**
      * @Route("/artist", name="artist_index")
-     * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')")
+     * @IsGranted("ROLE_MEMBER")
      */
     public function index()
     {
@@ -31,7 +31,7 @@ class ArtistController extends AbstractController
     
     /**
      * @Route("/artist/{id}", name="artist_show")
-     * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')")
+     * @IsGranted("ROLE_MEMBER")
      */
     public function show(Artist $artist)
     {

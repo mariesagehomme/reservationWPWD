@@ -19,7 +19,7 @@ class ReservationController extends AbstractController
 {
     /**
      * @Route("/reservation", name="reservation_index", methods={"GET"})
-     * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')")
+     * @IsGranted("ROLE_MEMBER")
      */
     public function index(ReservationRepository $reservationRepository): Response
     {
@@ -37,7 +37,7 @@ class ReservationController extends AbstractController
 
     /**
      * @Route("/reservation/new", name="reservation_new", methods={"GET","POST"})
-     * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')")
+     * @IsGranted("ROLE_MEMBER")
      */
     public function new(Request $request): Response
     {

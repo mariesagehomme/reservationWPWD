@@ -18,7 +18,7 @@ class AgentController extends AbstractController
 {
     /**
      * @Route("/agent", name="agent_index")
-     * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')")
+     * @IsGranted("ROLE_MEMBER")
      */
     public function index()
     {
@@ -36,6 +36,7 @@ class AgentController extends AbstractController
    /**
      * @Route("/agent/{id}/transfer/{artist_id}", name="agent_transfer", methods={"GET","POST"})
      * @ParamConverter("artist", options={"id" = "artist_id"})   
+     * @IsGranted("ROLE_MEMBER")
      */
     public function transfer(Agent $agent, Artist $artist, Request $request): Response
         {

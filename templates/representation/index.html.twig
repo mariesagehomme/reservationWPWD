@@ -27,7 +27,7 @@
                 </td>
                 <td>{{ representation.schedule|date('d-m-Y H:i') }}</td>
                 <td>
-                    <a href=" {{ path('representation_show', {'id':representation.id }) }}" class="btn btn-warning">Show</a>
+                    <a href=" {{ path('representation_show', {'id':representation.id }) }}" class="btn btn-info">Show</a>
                 </td>
             </tr>
         {% endfor %}   

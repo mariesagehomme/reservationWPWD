@@ -4,7 +4,7 @@
 
 {% block body %}
     <div class="col-sm-6 col-md-5 ml-auto mr-auto mt-5 p-4 info-sheet">
-    <h1>Représentation du {{ representation.schedule|date('d/m/Y') }} à {{ representation.schedule|date('G:i') }}</h1>
+    <h2>Représentation du {{ representation.schedule|date('d/m/Y') }} à {{ representation.schedule|date('G:i') }}</h2>
         <p><strong>Spectacle:</strong> {{ representation.theShow.title }}</p>
     <hr>
     {% if representation.theLocation %}

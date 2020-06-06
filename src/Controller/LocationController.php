@@ -12,7 +12,7 @@ class LocationController extends AbstractController
 {
     /**
      * @Route("/location", name="location_index")
-     * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("ROLE_MEMBER")
      */
     public function index()
     {
@@ -27,7 +27,7 @@ class LocationController extends AbstractController
     
     /**
      * @Route("/location/{id}", name="location_show")
-     * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("ROLE_MEMBER")
      */
     public function show($id)
     {
