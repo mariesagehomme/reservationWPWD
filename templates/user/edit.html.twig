@@ -1,9 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Formulaire{% endblock %}
+{% block title %}profil{% endblock %}
 
 {% block body %}
-
-    {{ include('user/new.html.twig', {'button_label': 'Update'}) }}
-
+    <h1 class="text-center">Welcome {{ user.firstname }} {{ user.lastname }}</h1>
+    <div class="profil">
+         <div class="col-6">
+            {% if user.picture %}
+            <p><img src="{{ asset('images/' ~ user.picture) }}" width="100%"></p>
+            {% else %}
+            <canvas width="300" height="200" style="border:1px solid #000000; border-radius: 20px;"></canvas>
+            {% endif %}
+        </div>
+        <div class="info-profil col-6">
+             {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <button class="btn btn-primary mt-4">{{ button_label|default('Save') }}</button>
+             {{ form_end(form) }} 
+        </div>
+    </div>
 {% endblock %}

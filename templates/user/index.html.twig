@@ -8,8 +8,7 @@
     <thead>
         <tr>
             <th>LOGIN</th>
-            <th>PASSWORD</th>
-            <th>FISTNAME</th>
+            <th>FIRSTNAME</th>
             <th>LASTNAME</th>
             <th>EMAIL</th>
             <th>LANGUE</th>
@@ -20,7 +19,6 @@
     {% for user in users %}
        <tr>
         <td>{{ user.login }}</td>
-        <td>{{ user.password }}</td>
         <td>{{ user.firstname }}</td>
         <td>{{ user.lastname }}</td>
         <td>{{ user.email }}</td>

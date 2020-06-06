@@ -3,16 +3,23 @@
 {% block title %}{{title}}{% endblock %}
 
 {% block body %}
-    <div class="col-5 ml-auto mr-auto mt-5 p-4 info-sheet">
-
-        <h2>{{ user.firstname }} {{ user.lastname }}</h2>
-        <hr>
-        <ul style="padding: 0;"> 
-            <li>{{ user.login}}</li>
-            <li>{{ user.password}}</li>
-            <li>{{ user.email}}</li>
-            <li>{{ user.langue}}</li>
-        </ul>
-        <a href="{{ path('user_index') }}" class="btn btn-info">back to list</a>
-     </div>
+    <h1 class="text-center">{{ user.firstname }} {{ user.lastname }}</h1>
+    <div class="show-profil">
+        
+    <a href="{{ path('user_edit', {'id': user.id}) }}" class="btn btn-primary edit-btn">edit my profile</a>
+        <div class="col-6">
+        {% if user.picture %}
+            <p><img src="{{ asset('images/' ~ user.picture) }}" width="100%"></p>
+       {% else %}
+             <canvas width="300" height="200" style="border:1px solid #000000; border-radius: 20px;"></canvas>
+       {% endif %}
+        </div>
+        <div class="col-6 info-sheet show-info-description">
+            <ul> 
+                <li>{{ user.login}}</li>
+                <li>{{ user.email}}</li>
+                <li>{{ user.langue}}</li>
+            </ul>
+         </div>
+    </div>            
 {% endblock %}

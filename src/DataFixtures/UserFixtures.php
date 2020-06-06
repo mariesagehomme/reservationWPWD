@@ -18,6 +18,7 @@ class UserFixtures extends Fixture
                 'lastname'=>'Sull',
                 'email'=>'bob@sull.com',
                 'langue'=>'fr',
+                'picture'=>'bob.jpg',
             ],
             [
                 'login'=>'fred',
@@ -26,6 +27,7 @@ class UserFixtures extends Fixture
                 'lastname'=>'Astair',
                 'email'=>'fred@sull.com',
                 'langue'=>'en',
+                'picture'=>'fred.jpg',
             ],
             [
                 'login'=>'judith',
@@ -34,6 +36,7 @@ class UserFixtures extends Fixture
                 'lastname'=>'Larson',
                 'email'=>'jud@lars.com',
                 'langue'=>'fr',
+                'picture'=>'judith.jpg',
             ],
         ];
         
@@ -48,6 +51,7 @@ class UserFixtures extends Fixture
             $user->setLastname($record['lastname']);
             $user->setEmail($record['email']);
             $user->setLangue($record['langue']);
+            $user->setPicture($record['picture']);
             
             $this->addReference($record['login'],$user);
             

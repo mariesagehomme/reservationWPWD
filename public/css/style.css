@@ -46,8 +46,8 @@ h1 {
     margin: auto;
 }
 
-/*login form and signin form*/
-.form-login, .form-signin{
+/*login form*/
+.form-login{
     max-width: 400px;
     margin: 100px auto;
     background-color: #f8f9fa;
@@ -122,3 +122,34 @@ tr, .info-sheet {
     z-index: 3;
  }
 
+ /*PROFIL*/
+ .profil {
+     display: flex;
+     margin: auto;
+     max-width: 800px;
+     justify-content: space-between;
+ }
+ 
+ 
+.info-profil {
+    max-width: 400px;
+    background-color: #f8f9fa;
+    padding: 35px;
+    border-radius: 20px;
+}
+
+.show-profil{
+    display: flex;
+    margin: auto;
+    max-width: 800px;
+    justify-content: space-between;
+}
+
+.show-info-description{
+    max-height:100px;
+    padding: 20px;
+}
+
+.edit-btn {
+    max-height: 40px;
+}
