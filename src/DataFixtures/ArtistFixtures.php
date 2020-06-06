@@ -6,6 +6,8 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use App\Entity\Artist;
 
+use Doctrine\Common\DataFixtures\DependentFixtureInterface;
+
 class ArtistFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
@@ -30,5 +32,11 @@ class ArtistFixtures extends Fixture
         }
 
         $manager->flush();
+    }
+    
+        public function getDependencies() {
+        return [
+            AgentFixtures::class,
+        ];
     }
 }

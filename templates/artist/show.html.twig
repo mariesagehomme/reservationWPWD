@@ -4,7 +4,7 @@
 
 {% block body %}
     <div class="col-4 ml-auto mr-auto mt-5 p-4 info-sheet">
-        <h1>{{ artist.firstname }} {{ artist.lastname }}</h1>
+        <h2>{{ artist.firstname }} {{ artist.lastname }}</h2>
         <hr>
 
         <h3>Type</h3>
@@ -13,6 +13,11 @@
             <li style="list-style-type: none;">{{ artistType.type}}</li>
         {% endfor %}
         </ul>
+         <li style="list-style-type: none;">{{ artist.agent}}</li>
+        {% if 'ROLE_ADMIN' in app.user.roles %}    
+            <p><a href="{{ path('agent_transfer',{'id':artist.agent.id, 'artist_id':artist.id}) }}">ask for a transfer</a></p>
+        {% endif %}
+        
         <a href="{{ path('artist_index') }}" class="btn btn-primary">back to list</a>
     </div>
         

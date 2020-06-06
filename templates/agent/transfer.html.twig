@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Locality {% endblock %}
+
+{% block body %}
+    <div class="text-center mb-4">
+    <h2>Transfer</h2>
+     {{ form_start(formTransfer) }}
+    {{ form_widget(formTransfer) }}
+    <button class="btn">{{ button_label|default('Transfer') }}</button>
+    {{ form_end(formTransfer) }}
+
+<a href="{{ path('agent_index') }}">back to list</a>
+    </div>
+{% endblock %}

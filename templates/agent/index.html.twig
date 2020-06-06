@@ -20,9 +20,11 @@
             <tr>
                 <td>{{ agent.name }}</td>
                 <td>{{ agent.email }}</td>
+                <td>
                 {% for artist in agent.artists %}
-                    <td>{{ artist.firstname }}</td>
+                    {{ artist.firstname }}
                 {% endfor %}
+                </td>
             </tr>
         {% endfor %}   
         </tbody>
