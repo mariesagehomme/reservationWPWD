@@ -7,7 +7,7 @@
     <div class="profil">
          <div class="col-6">
             {% if user.picture %}
-            <p><img src="{{ asset('images/' ~ user.picture) }}" width="100%"></p>
+            <p><img src="{{ asset('uploads/picture/' ~ user.picture) }}" width="100%"></p>
             {% else %}
             <canvas width="300" height="200" style="border:1px solid #000000; border-radius: 20px;"></canvas>
             {% endif %}

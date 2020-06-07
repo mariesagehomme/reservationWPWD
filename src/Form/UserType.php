@@ -12,6 +12,8 @@ use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use App\Entity\Role;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Validator\Constraints\File;
 
 class UserType extends AbstractType
 {
@@ -29,6 +31,7 @@ class UserType extends AbstractType
                     'Anglais' => 'en',
                 ]
             ])
+                
             ->add('user_role', EntityType::class, [
                 'class' => Role::class,
                 'choice_label' => 'Role',
@@ -44,6 +47,21 @@ class UserType extends AbstractType
                     ]),
                 ],
             ])
+            ->add('picture', FileType::class, [
+                'label' => 'picture',
+                 'mapped' => false,
+                'required' => false,
+                'constraints' => [
+                    new File([
+                        'mimeTypes' => [
+                            'image/jpeg',
+                            'image/png',
+                        ],
+                        'mimeTypesMessage' => 'Please upload a valid JPG or PNG picture',
+                    ])
+                ],
+            ])
+    
         ;
     }
     

@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 
 class UserController extends AbstractController
@@ -76,21 +77,41 @@ class UserController extends AbstractController
     /**
      * @Route("/user/{id}/edit", name="user_edit", methods={"GET","POST"})
      */
-     public function edit(Request $request, User $user): Response
+     public function edit(Request $request, User $user, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
-        
+
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-            return $this->redirectToRoute('user_index');
-        } 
-        
+
+            $pictureFile = $form->get('picture')->getData();
+
+            if ($pictureFile) {
+                $originalFilename = pathinfo($pictureFile->getClientOriginalName(), PATHINFO_FILENAME); //getData
+
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$pictureFile->guessExtension();
+
+               try {
+                    $pictureFile->move(
+                        $this->getParameter('picture_directory'),
+                        $newFilename
+                    );
+                    $user->setPicture($newFilename);
+                    
+                } catch (FileException $e) { //object 
+                    echo $e->getMessage();
+                }  
+            }
+            $this->getDoctrine()->getManager()->persist($user);
+            $this->getDoctrine()->getManager()->flush(); //save
+                                    
+            return $this->redirect($this->generateUrl('user_index'));
+        }
         return $this->render('user/edit.html.twig', [
             'user' => $user,
             'form' => $form->createView()
         ]);
-        
     }
     
     /**
