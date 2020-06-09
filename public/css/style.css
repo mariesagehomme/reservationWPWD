@@ -26,9 +26,20 @@ li {
     list-style-type: none;
 }
 
+.title{
+    font-family: 'Anton', sans-serif;
+}
+
 
 label {
     margin-top: 1em;
+}
+
+.menu-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100px;
 }
 
 h1 {
@@ -44,6 +55,57 @@ h1 {
 .dataTables_wrapper {
     max-width: 1200px;
     margin: auto;
+}
+
+#table_id_filter{
+    float: none;
+    text-align: center;
+}
+
+
+#table_id_filter label input{
+    width: 600px;
+    height: 60px;
+    border: none;
+    margin-bottom: 50px;
+}
+
+@media screen and (max-width: 640px) {
+  #table_id_filter label input {
+    width: 300px;
+  }
+}
+
+#table_id_length{
+    display: none;
+}
+
+.reservation-name {
+ font-weight: bold;
+}
+
+.reservation-resultat {
+    display: flex;
+    flex-direction: row;  
+    justify-content:  space-between; 
+}
+
+
+@media screen and (max-width: 860px) {
+  .reservation-resultat {
+    display: flex;
+    flex-direction: column;    
+}
+
+}
+
+.dataTables_info {
+    display: none;
+}
+
+#table_id_paginate {
+    float: none;
+    text-align: center;
 }
 
 /*login form*/

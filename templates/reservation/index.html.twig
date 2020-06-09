@@ -4,13 +4,13 @@
 
 {% block body %}
     <h1 class="text-center">Reservation</h1>
-    <div class="col-4 ml-auto mr-auto mt-5 p-4 info-sheet">
+    <div class="col-md-4 col-sm-7 ml-auto mr-auto mt-4 mb-4 p-4 info-sheet">
     <ul>
         {% for groups in reservations %}
             <li style="list-style-type:none;">
-                <ul>{{ groups.0.user.firstname }} {{ groups.0.user.lastname }}
+                <ul class="reservation-name">{{ groups.0.user.firstname }} {{ groups.0.user.lastname }}
                 {% for reservation in groups %}
-                    <li  style="margin: 20px;">
+                    <li class="reservation-resultat" style="margin: 20px;">
                         <span>{{ reservation.representation.theShow.title }}</span> ({{ reservation.places }} places)
                         <a href="{{ path('reservation_show', {'id': reservation.id}) }}" class="btn btn-info">show</a>
                         
