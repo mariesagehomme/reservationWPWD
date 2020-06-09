@@ -4,28 +4,7 @@
     {% block stylesheet %}
    <style>
   /* Variables */
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    height: 100vh;
-    width: 100vw;
-  }
-  form {
-    width: 30vw;
-    min-width: 500px;
-    align-self: center;
-    box-shadow: 0px 0px 0px 0.5px rgba(50, 50, 93, 0.1),
-      0px 2px 5px 0px rgba(50, 50, 93, 0.1), 0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);
-    border-radius: 7px;
-    padding: 40px;
-  }
+  
   input {
     border-radius: 6px;
     margin-bottom: 6px;
@@ -170,10 +149,7 @@
         <div class="container-payment">
             <table class="table text-center col-7 mr-4">
                 <tbody>
-                    <tr>
-                        <th>Id</th>
-                        <td>{{ reservation.id }}</td>
-                    </tr>
+
                     <tr>
                         <th>Show</th>
                         <td>{{ reservation.representation.theShow.title }}</td>
@@ -186,13 +162,10 @@
                         <th>Hours</th>
                         <td>{{ reservation.representation.schedule|date('H:i') }}</td>
                     </tr>
-                    <tr>
-                        <th>seats</th>
-                        <td>{{ reservation.places }}</td>
-                    </tr>
+
                 </tbody>
             </table>
-            <form id="payment-form" method="post" class="form-payment col-5">
+            {{ form_start(form, {attr: {id: form.vars.id}}) }}        
               <div id="card-element">
                 <!-- Elements will create input elements here -->
               </div>
@@ -201,7 +174,8 @@
               <div id="card-errors" role="alert"></div>
 
               <button class="btn btn-info mt-4">Pay</button>
-            </form>
+            {{ form_widget(form.places) }}
+            {{ form_end(form) }}
     </div>
 {% endblock %}
 
@@ -211,7 +185,7 @@
         // See your keys here: https://dashboard.stripe.com/account/apikeys
         var stripe = Stripe('pk_test_ASNDr2HbPLva4F0ZgIiJwYhv00knqSDB8e');
         
-        console.log("stripe");
+        //console.log("stripe");
         var elements = stripe.elements();
         // Custom styling can be passed to options when creating an Element.
         var style = {
@@ -238,7 +212,7 @@
         });
         
         // Create a token or display an error when the form is submitted.
-        var form = document.getElementById('payment-form');
+        var form = document.getElementById('{{ form.vars.id }}');
         form.addEventListener('submit', function(event) {
           event.preventDefault();
 
@@ -258,7 +232,7 @@
         
         function stripeTokenHandler(token) {
             // Insert the token ID into the form so it gets submitted to the server
-            var form = document.getElementById('payment-form');
+            var form = document.getElementById('{{ form.vars.id }}');
             //console.log('form');
             var hiddenInput = document.createElement('input');
             hiddenInput.setAttribute('type', 'hidden');

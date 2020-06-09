@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Reservation;
+use App\Entity\Representation;
+use App\Entity\User;
 use App\Form\ReservationType;
 use App\Repository\ReservationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -109,20 +111,51 @@ class ReservationController extends AbstractController
      * @Route("/reservation/{id}/pay", name="reservation_pay")
      * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')")
      */
-    public function pay(Request $request, Reservation $reservation): Response  {
+    public function pay(Request $request, Representation $representation): Response  {
+    //https://www.codevate.com/blog/how-to-accept-payments-with-stripe-in-symfony-web-apps
 
-       //var_dump($request->request); die;
-      
-        \Stripe\Stripe::setApiKey('sk_test_a84m1hrSViHaGM7UJTkJR0ok00iz91QCPu');
-        \Stripe\PaymentIntent::create([
-          'amount' => 2000,
-          'currency' => 'eur',
-          'payment_method_types' => ['card'],
-        ]);
+       \Stripe\Stripe::setApiKey('sk_test_a84m1hrSViHaGM7UJTkJR0ok00iz91QCPu');
+       
+      //accéder à l'entité de l'user connecté
+       $user = $this->getUser(); 
+       
+       //Accéder à l'élément du template
+       $token = filter_input(INPUT_POST, 'stripeToken');
+       
+        $reservation = new Reservation();
+        $reservation->setRepresentation($representation);
+        $reservation->setUser($user);
+        
+        
+        $form = $this->createForm(ReservationType::class, $reservation);
+        $form->handleRequest($request);
+       
+       if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+   
+            // Create a Customer:
+            $customer = \Stripe\Customer::create([
+                'email' => $user->getEmail(),
+                'source' => $token,
+            ]);
 
-       return $this->render('reservation/pay.html.twig', [
-            'reservation' => $reservation
-        ]);
-    }
-    
+            // Charge the Customer instead of the card:
+            $charge = \Stripe\Charge::create([
+                'amount' => 1000,
+                'currency' => 'eur',
+                'customer'=>$customer->id,
+             ]);
+            //Enregistrer les infos
+            $entityManager->persist($reservation);
+            $entityManager->flush();
+            
+            return $this->redirectToRoute('reservation_index');
+            
+       }
+
+            return $this->render('reservation/pay.html.twig', [
+                 'reservation' => $reservation,
+                 'form' => $form->createView(),
+             ]);
+        }
 }

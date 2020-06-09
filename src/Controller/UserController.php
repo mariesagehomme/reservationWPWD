@@ -18,7 +18,7 @@ class UserController extends AbstractController
 {
     /**
      * @Route("/user", name="user_index")
-     * @IsGranted("ROLE_ADMIN") 
+     * @IsGranted("ROLE_MEMBER") 
      */
     public function index()
     {
@@ -59,7 +59,7 @@ class UserController extends AbstractController
     
     /**
      * @Route("/user/{id}", name="user_show", methods={"GET"}, requirements={"id"="\d+"})
-     *@IsGranted("ROLE_ADMIN")
+     *@IsGranted("ROLE_MEMBER") 
      */
     public function show(User $user)
     {

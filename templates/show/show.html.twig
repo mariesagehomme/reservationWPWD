@@ -28,7 +28,9 @@
         {% if show.representations|length>=1 %}
         <ul>
             {% for representation in show.representations %}
-                <li>{{ representation.schedule|date('d/m/Y G:i:s') }}</li>              
+                <li>{{ representation.schedule|date('d/m/Y G:i:s') }}
+                <a href="{{ path('reservation_pay', {'id': representation.id}) }}" class="btn btn-danger">pay</a>
+                </li>              
             {% endfor %}
         </ul>
         {% else %}

@@ -47,7 +47,7 @@ h1 {
 }
 
 /*login form*/
-.form-login{
+.form-login, .form-signin{
     max-width: 400px;
     margin: 100px auto;
     background-color: #f8f9fa;

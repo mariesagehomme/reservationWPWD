@@ -13,7 +13,6 @@
                     <li  style="margin: 20px;">
                         <span>{{ reservation.representation.theShow.title }}</span> ({{ reservation.places }} places)
                         <a href="{{ path('reservation_show', {'id': reservation.id}) }}" class="btn btn-info">show</a>
-                        <a href="{{ path('reservation_pay', {'id': reservation.id}) }}" class="btn btn-danger">pay</a>
                         
                     </li>
                 {% endfor %}

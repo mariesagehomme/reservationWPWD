@@ -29,7 +29,7 @@ class ReservationType extends AbstractType
         'expanded' => false // options will be presented in a <select> element; set this to true, to present the data as checkboxes             
         ])
              //Dans l'entité user, ajout de la methode tostring   
-            ->add('user')
+            //->add('user')
         ;
     }
 
