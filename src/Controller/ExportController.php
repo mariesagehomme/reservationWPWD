@@ -12,7 +12,6 @@ class ExportController extends AbstractController
 {
     /**
      * @Route("/export", name="export_index")
-     * @IsGranted("ROLE_MEMBER")
      */
     public function index()
     {
@@ -24,7 +23,6 @@ class ExportController extends AbstractController
     
      /**
      * @Route("/export/export", name="export_export")
-     * @IsGranted("ROLE_MEMBER")
      */
     public function generateCsvAction() {
         
