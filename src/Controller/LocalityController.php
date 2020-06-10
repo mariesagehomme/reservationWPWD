@@ -46,7 +46,7 @@ class LocalityController extends AbstractController
     
      /**
      * @Route("/locality/{id}/edit", name="locality_edit", methods={"GET","POST"})
-     * @IsGranted("ROLE_AFFILIATE")
+     * @IsGranted("ROLE_MEMBER")
      */
      public function edit(Request $request, Locality $locality): Response
     {

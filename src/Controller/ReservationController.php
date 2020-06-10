@@ -73,7 +73,7 @@ class ReservationController extends AbstractController
 
     /**
      * @Route("/reservation/{id}/edit", name="reservation_edit", methods={"GET","POST"})
-     * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')")
+     * @IsGranted("ROLE_MEMBER")
      */
     public function edit(Request $request, Reservation $reservation): Response
     {
@@ -94,7 +94,7 @@ class ReservationController extends AbstractController
 
     /**
      * @Route("/{id}", name="reservation_delete", methods={"DELETE"})
-     * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')")
+     * @IsGranted("ROLE_MEMBER")
      */
     public function delete(Request $request, Reservation $reservation): Response
     {
@@ -109,7 +109,7 @@ class ReservationController extends AbstractController
         
     /**
      * @Route("/reservation/{id}/pay", name="reservation_pay")
-     * @Security("is_granted('ROLE_ADMIN', 'ROLE_MEMBER', 'ROLE_AFFILIATE')")
+     * @IsGranted("ROLE_MEMBER")
      */
     public function pay(Request $request, Representation $representation): Response  {
     //https://www.codevate.com/blog/how-to-accept-payments-with-stripe-in-symfony-web-apps
