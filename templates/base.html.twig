@@ -15,16 +15,19 @@
     </head>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light menu-nav">
-            <h2 class="title">Project Symfony - marie Sagehomme</h2>
+            <h2 class="title">Project Symfony - marie Sagehomme</h2> 
             <div id="main-nav">
               <ul class="navbar-nav mr-auto">
-                 {% if app.user %}
+                 {% if app.user %}  
                  <li class="nav-item active ml-3">
                     <a class="nav-link btn btn-info" style="color: seashell;" href="{{ path('user_show', {'id':app.user.id}) }}">{{app.user.firstname }}<span class="sr-only">(current)</span></a>
                  </li>
                  <li class="nav-item ml-3">
                    <a class="nav-link btn btn-danger" href="{{ path('app_logout') }}" style="color: seashell;">Logout</a>
                  </li> 
+                 <li class="nav-item ml-3">
+                    <a class="nav-link btn btn-button" style="color: black; border:1px solid black;" href="{{ path('easyadmin')}}">Admin</a>
+                 </li>  
                  {% else %}
                      <li>
                         <a class="nav-link btn btn-info" style="color: seashell;" href="{{ path('app_login') }}">log in<span class="sr-only"></span></a> 
@@ -110,5 +113,14 @@
             $('#table_id').DataTable();});
         </script> 
         {% endblock %}
+        
+        <footer class="footer">
+            <ul>
+                <li>
+                    <a class="linkFooter" href="">Copyright &copy; - marie Sagehomme</a>
+                </li> 
+            </ul>
+
+    </footer>
     </body>
 </html>

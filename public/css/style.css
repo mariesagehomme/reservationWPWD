@@ -50,6 +50,22 @@ h1 {
  
 }
 
+footer {
+    display:block; 
+    margin-top:235px; 
+    text-align:center;
+    background-color: #f8f9fa;
+    opacity: 0.5;
+    padding: 20px 0 0 0;
+}
+
+footer ul {
+    margin: 0;
+}
+
+footer ul li {
+    padding: 20px;
+}
 /*DATABLE DESIGN*/
 
 .dataTables_wrapper {
