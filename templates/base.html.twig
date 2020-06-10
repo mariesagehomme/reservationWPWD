@@ -15,7 +15,7 @@
     </head>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light menu-nav">
-            <h2 class="title">Project Symfony - marie Sagehomme</h2> 
+            <a href="{{ path('show_index') }} "> <img src="{{ asset('images/logo.png') }}" width="60%"></a>
             <div id="main-nav">
               <ul class="navbar-nav mr-auto">
                  {% if app.user %}  
@@ -25,9 +25,6 @@
                  <li class="nav-item ml-3">
                    <a class="nav-link btn btn-danger" href="{{ path('app_logout') }}" style="color: seashell;">Logout</a>
                  </li> 
-                 <li class="nav-item ml-3">
-                    <a class="nav-link btn btn-button" style="color: black; border:1px solid black;" href="{{ path('easyadmin')}}">Admin</a>
-                 </li>  
                  {% else %}
                      <li>
                         <a class="nav-link btn btn-info" style="color: seashell;" href="{{ path('app_login') }}">log in<span class="sr-only"></span></a> 
@@ -44,6 +41,9 @@
                       <a class="btn btn-dark">all pages</a>
                   <ul>
                       {% if is_granted('ROLE_ADMIN') %}
+                      <li>
+                         <a class="nav-link btn btn-button" style="border:1px solid black; color:black;" href="{{ path('easyadmin')}}">Admin</a>
+                      </li>      
                       <li>
                           <a class="nav-link btn btn-dark" href="{{ path('user_index') }}">User</a>
                       </li>
@@ -93,6 +93,11 @@
                           <a class="nav-link btn btn-dark" href="{{ path('agent_index') }}">Agent</a>
                       </li>  
                       {% endif %}
+                      {% if is_granted('ROLE_MEMBER') %}
+                      <li>
+                          <a class="nav-link btn btn-dark" href="{{ path('export_index') }}">CSV</a>
+                      </li>  
+                      {% endif %}
                   </ul>
                 </li>
                 {% endif %}
@@ -115,12 +120,8 @@
         {% endblock %}
         
         <footer class="footer">
-            <ul>
-                <li>
-                    <a class="linkFooter" href="">Copyright &copy; - marie Sagehomme</a>
-                </li> 
-            </ul>
-
-    </footer>
+           <p>Copyright &copy;</p>
+           <p>Project symfony - marie Sagehomme</p>
+        </footer>
     </body>
 </html>

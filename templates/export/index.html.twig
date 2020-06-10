@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+<div class="example-wrapper">
+    <h1 class="text-center">{{ title }}</h1>
+    <h2 class="text-center" style="color:seashell;">If you want to know all information about shows</h2>
+    <h3 class="text-center" style="color:seashell;">Upload the file</h3>
+    <a class="btn btn-dark d-block mx-auto w-25 p-3" href="{{ path('export_export') }}">shows</a>
+</div>
+{% endblock %}
